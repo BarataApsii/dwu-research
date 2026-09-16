@@ -1,0 +1,658 @@
+{% load static %}
+<!doctype html>
+<html class='no-js' lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='x-ua-compatible' content='ie=edge'>
+    <title>Doctor of Education (EdD) - DWU</title>
+    <meta name='robots' content='noindex, follow'>
+    <meta name='description' content='Study the Doctor of Education (EdD) at Divine Word University and develop advanced research and leadership skills in education.'>
+    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+    <link rel='shortcut icon' type='image/x-icon' href="{% static 'research/images/logo.png' %}">
+
+    <link href='https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap' rel='stylesheet'>
+    <link rel='stylesheet' href="{% static 'research/css/research.css' %}">
+    <link rel='stylesheet' href="{% static 'research/css/new-research.css' %}">
+</head>
+<body>
+    <div class='main-wrapper'>
+        <div class="section header-section">
+                <div class="header-top-section">
+                    <div class="container">
+                        <div class="header-top-wrap">
+                            <!-- Header Top Info Start  -->
+                            <div class="header-top-info">
+                                <ul>
+                                    <li><a href="alumni-page.html">ALUMNI</a></li>
+                                    <li><a href="http://intranet.dwu.ac.pg">INTRANET</a></li>
+                                    <li><a href="http://library.dwu.ac.pg:8080/liberty3/">LIBRARY</a></li>
+                                </ul>
+                            </div>
+                            <!-- Header Top Info End  -->
+                            <!-- Header Social Wrap Start  -->
+                            <div class="header-social-wrap">
+                                <div class="header-social">
+                                    <span class="follow-us">Follow Us :</span>
+                                    <ul>
+                                        <li><a href="https://www.facebook.com/dwu.official"><i class="fab fa-facebook-f"></i></a></li>
+                                        <li><a href="https://www.youtube.com/@DivineWordUniversity"><i class="fab fa-youtube"></i> </a></li>
+                                        <li><a href="https://pg.linkedin.com/school/divine-word-university-official/"><i class="fab fa-linkedin-in"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="login-register">
+                                    <div class="login-register-inline">
+                                        <span class="login-register-link"><a href="#">Login</a></span><span class="login-register-separator">|</span><span class="login-register-link"><a href="#">Register</a></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Header Social Wrap End  -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Header Bottom Start Here -->
+                <div id="header" class="header-bottom-section">
+                    <!-- Header Bottom Container Start Here -->
+                    <div class="container">
+                        <!-- Header Wrap Start  -->
+                        
+                        <div class="header-wrap">
+
+                            <div class="header-logo">
+                                <a href="{% url 'research:home' %}" class="d-flex align-items-center text-decoration-none">
+                                    <img src="{% static 'research/images/logo.png' %}" alt="Divine Word University Logo" class="me-1">
+                                    <div class="d-flex flex-column">
+                                        <span class="header-logo-text">DWU</span>
+                                        <p class="header-logo-subtext">PAPUA NEW GUINEA</p>
+                                    </div>
+                                </a>
+                            </div>
+                     
+                            <div class="header-right">
+                                <!-- Mobile Menu (visible on mobile only) -->
+                                <div class="header-menu-mobile d-lg-none">
+                                    <!-- Hamburger Button -->
+                                    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Menu" aria-expanded="false">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </button>
+                                    <!-- Close Button (fixed at same position as hamburger, shown when menu is open) -->
+                                    <button class="close-menu" id="closeMenuBtn" aria-label="Close Menu"></button>
+                                    <!-- Mobile Menu Overlay -->
+                                    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+                                    <!-- Mobile Navigation Sidebar -->
+                                    <div class="mobile-nav-menu" id="mobileNavMenu">
+                                        <nav>
+                                            <ul>
+                                                <!-- MEGA MENU ABOUT US -->
+                                                <li class="has-submenu">
+                                                    <div class="menu-item-row">
+                                                        <a href="about-dwu.html">About us</a>
+                                                        <button class="submenu-toggle" aria-label="Toggle About us submenu" aria-expanded="false"><i class="fas fa-chevron-down"></i></button>
+                                                    </div>
+                                                    <ul class="sub-menu">
+                                                        <li class="has-category">
+                                                            <div class="category-row">
+                                                                <span class="category-label">Divine Word</span>
+                                                                <button class="category-toggle" aria-label="Toggle Divine Word" aria-expanded="false"><i class="fas fa-chevron-down"></i></button>
+                                                            </div>
+                                                            <ul class="category-items">
+                                                                <li><a href="faith-vision.html">Vision</a></li>
+                                                                <li><a href="faith-mission.html">Faith & Mission</a></li>
+                                                                <li><a href="faith-catholic-tradition.html">Catholic Tradition</a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li class="has-category">
+                                                            <div class="category-row">
+                                                                <span class="category-label">President Offices</span>
+                                                                <button class="category-toggle" aria-label="Toggle President Offices" aria-expanded="false"><i class="fas fa-chevron-down"></i></button>
+                                                            </div>
+                                                            <ul class="category-items">
+                                                                <li><a href="president-details.html">President</a></li>
+                                                                <li><a href="vp-academics.html">VP Academic Affairs</a></li>
+                                                                <li><a href="vp-operations.html">VP Operation</a></li>
+                                                                <li><a href="vp-planning-and-dev.html">VP Planning & Dev</a></li>
+                                                                <li><a href="dwu.html">DWU</a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li class="has-category">
+                                                            <div class="category-row">
+                                                                <span class="category-label">Administrative Divisions</span>
+                                                                <button class="category-toggle" aria-label="Toggle Administrative Divisions" aria-expanded="false"><i class="fas fa-chevron-down"></i></button>
+                                                            </div>
+                                                            <ul class="category-items">
+                                                                <li><a href="hr-dept.html">HR Management</a></li>
+                                                                <li><a href="ict-dept.html">ICT Services</a></li>
+                                                                <li><a href="finance-dept.html">Finance</a></li>
+                                                                <li><a href="quality-assurance-dept.html">Quality Assurance</a></li>
+                                                                <li><a href="marketing-dept.html">Marketing</a></li>
+                                                                <li><a href="partnership-dept.html">Partnership</a></li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <!------- Study at DWU Starts Here------>
+                                                <li class="has-submenu">
+                                                    <div class="menu-item-row">
+                                                        <a href="course-filter.html">Study at DWU</a>
+                                                        <button class="submenu-toggle" aria-label="Toggle Study at DWU submenu" aria-expanded="false"><i class="fas fa-chevron-down"></i></button>
+                                                    </div>
+                                                    <ul class="sub-menu">
+                                                        <li class="has-category">
+                                                            <div class="category-row">
+                                                                <span class="category-label">Find a Program</span>
+                                                                <button class="category-toggle" aria-label="Toggle Find a Program" aria-expanded="false"><i class="fas fa-chevron-down"></i></button>
+                                                            </div>
+                                                            <ul class="category-items">
+                                                                <li><a href="course-filter.html">All Programs</a></li>
+                                                                <li><a href="high-school-leavers.html">High School Leavers</a></li>
+                                                                <li><a href="non-school-leavers.html">Non School Leavers</a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li class="has-category">
+                                                            <div class="category-row">
+                                                                <span class="category-label">How to Apply</span>
+                                                                <button class="category-toggle" aria-label="Toggle How to Apply" aria-expanded="false"><i class="fas fa-chevron-down"></i></button>
+                                                            </div>
+                                                            <ul class="category-items">
+                                                                <li><a href="undergraduate-students.html">Undergraduate Students</a></li>
+                                                                <li><a href="post-graduate-students.html">Postgraduate Students</a></li>
+                                                                <li><a href="diploma-students.html">Diploma Students</a></li>
+                                                                <li><a href="flexible-learning-students.html">Flexible Learning Students</a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li class="has-category">
+                                                            <div class="category-row">
+                                                                <span class="category-label">Student Services</span>
+                                                                <button class="category-toggle" aria-label="Toggle Student Services" aria-expanded="false"><i class="fas fa-chevron-down"></i></button>
+                                                            </div>
+                                                            <ul class="category-items">
+                                                                <li><a href="student-stories.html">Student Stories</a></li>
+                                                                <li><a href="student-accommodation.html">Student Accommodation</a></li>
+                                                                <li><a href="student-safety.html">Student Safety</a></li>
+                                                                <li><a href="councelling-services.html">Counselling Services</a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li class="has-category">
+                                                            <div class="category-row">
+                                                                <span class="category-label">Campus Facilities</span>
+                                                                <button class="category-toggle" aria-label="Toggle Campus Facilities" aria-expanded="false"><i class="fas fa-chevron-down"></i></button>
+                                                            </div>
+                                                            <ul class="category-items">
+                                                                <li><a href="global-travels-center.html">Global Travels</a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li class="has-category">
+                                                            <div class="category-row">
+                                                                <span class="category-label">Clubs and Activities</span>
+                                                                <button class="category-toggle" aria-label="Toggle Clubs and Activities" aria-expanded="false"><i class="fas fa-chevron-down"></i></button>
+                                                            </div>
+                                                            <ul class="category-items">
+                                                                <li><a href="chapliancy.html">Chaplaincy</a></li>
+                                                                <li><a href="std-association-grid.html">Student Associations</a></li>
+                                                                <li><a href="std-academic-clubs-grid.html">Clubs and Societies</a></li>
+                                                                <li><a href="upcoming-events.html">Upcoming Events</a></li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <!-- Research Menu -->
+                                                <li class="has-submenu">
+                                                    <div class="menu-item-row">
+                                                        <a href="research.html">Research</a>
+                                                        <button class="submenu-toggle" aria-label="Toggle Research submenu" aria-expanded="false"><i class="fas fa-chevron-down"></i></button>
+                                                    </div>
+                                                    <ul class="sub-menu">
+                                                        <li class="has-category">
+                                                            <div class="category-row">
+                                                                <span class="category-label">Research Community</span>
+                                                                <button class="category-toggle" aria-label="Toggle Research Community" aria-expanded="false"><i class="fas fa-chevron-down"></i></button>
+                                                            </div>
+                                                            <ul class="category-items">
+                                                                <li><a href="research-page.html">Researchers</a></li>
+                                                                <li><a href="research-center.html">Institute and Centres</a></li>
+                                                                <li><a href="research-page.html">Research Candidates</a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li class="has-category">
+                                                            <div class="category-row">
+                                                                <span class="category-label">Research Programs</span>
+                                                                <button class="category-toggle" aria-label="Toggle Research Programs" aria-expanded="false"><i class="fas fa-chevron-down"></i></button>
+                                                            </div>
+                                                            <ul class="category-items">
+                                                                <li><a href="{% url 'research:doctor-of-philosophy' %}">Doctor of Philosophy (PhD)</a></li>
+                                                                <li><a href="{% url 'research:master-of-philosophy' %}">Master of Philosophy (MPhil)</a></li>
+                                                                <li><a href="{% url 'research:master-of-research-methodology' %}">Master in Research Methodology (MRM)</a></li>
+                                                                <li><a href="{% url 'research:doctor-of-education' %}">Doctor of Education (EdD)</a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li class="has-category">
+                                                            <div class="category-row">
+                                                                <span class="category-label">Research Center</span>
+                                                                <button class="category-toggle" aria-label="Toggle Research Center" aria-expanded="false"><i class="fas fa-chevron-down"></i></button>
+                                                            </div>
+                                                            <ul class="category-items">
+                                                                <li><a href="partners.html">Partner with us</a></li>
+                                                                <li><a href="research-center.html">Supervisor resources</a></li>
+                                                                <li><a href="research-center.html">Candidate resources</a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li class="has-category">
+                                                            <div class="category-row">
+                                                                <span class="category-label">Collaborate with DWU</span>
+                                                                <button class="category-toggle" aria-label="Toggle Collaborate with DWU" aria-expanded="false"><i class="fas fa-chevron-down"></i></button>
+                                                            </div>
+                                                            <ul class="category-items">
+                                                                <li><a href="research-page.html">Innovate and research</a></li>
+                                                                <li><a href="all-campuses.html">Join us on campus</a></li>
+                                                                <li><a href="std-associations-clubs.html">Connect with students</a></li>
+                                                                <li><a href="research-page.html">Engage our candidates</a></li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <!---- Learning and Teaching Menu ---->
+                                                <li>
+                                                    <a href="https://www.dwu.ac.pg/clt/">Learning and Teaching</a>
+                                                </li>
+                                                <!---- Campuses Menu ---->
+                                                <li class="has-submenu">
+                                                    <div class="menu-item-row">
+                                                        <a href="all-campuses.html">Campuses</a>
+                                                        <button class="submenu-toggle" aria-label="Toggle Campuses submenu" aria-expanded="false"><i class="fas fa-chevron-down"></i></button>
+                                                    </div>
+                                                    <ul class="sub-menu">
+                                                        <li><a href="madang-campus.html">Madang Campus</a></li>
+                                                        <li><a href="pom-campus.html">Port Moresby Campus</a></li>
+                                                        <li><a href="wewak-campus.html">Wewak Campus</a></li>
+                                                        <li><a href="rabaul-campus.html">Rabaul Campus</a></li>
+                                                        <li><a href="hagen-campus.html">Mt. Hagen Campus</a></li>
+                                                    </ul>
+                                                </li>
+                                                <!-------- Online Payments Start Here  -------->
+                                                <li class="mobile-nav-cta"><a href="{% url 'research:home' %}">Online Payments</a></li>
+                                                <!--------- Online Payments End Here  --------->
+                                            </ul>
+                                            <!-- Contact Section for Mobile Menu -->
+                                            <div class="mobile-menu-contact">
+                                                <a href="contact.html" class="contact-link">
+                                                    <i class="fas fa-envelope"></i>
+                                                    <span>Contact us</span>
+                                                </a>
+                                                <div class="mobile-social-links">
+                                                    <a href="https://www.facebook.com/dwu.official" class="social-link facebook" target="_blank">
+                                                        <i class="fab fa-facebook-f"></i>
+                                                        <span>Facebook</span>
+                                                    </a>
+                                                    <a href="https://www.youtube.com/@DivineWordUniversity" class="social-link youtube" target="_blank">
+                                                        <i class="fab fa-youtube"></i>
+                                                        <span>YouTube</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </nav>
+                                    </div>
+                                </div>
+                                <!-- Desktop Menu (hidden on mobile) -->
+                                <div class="header-menu d-none d-lg-block">
+                                    <div class="main-menu">
+                                        <nav id="mobile-menu">
+                                            <ul>
+                                                <li class=""><a href="{% url 'research:home' %}">Home</a></li>
+                                                <!-- MEGA MENU ABOUT US -->
+                                                <li class="about-menu">
+                                                    <a href="about-dwu.html" class="mm-arr">About us</a>
+                                                    <div class="mm-pos">
+                                                        <div class="about-mm m-menu">
+                                                            <div class="m-menu-inn">
+                                                                <div class="mm1-com mm1-s1">
+                                                                    <div class="ed-course-in">
+                                                                        <a class="course-overlay" href="about.html">
+                                                                            <img src="assets/images/test/about us1.png" alt="">
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="mm1-com mm1-s3">
+                                                                    <h5 style="margin-bottom: 15px; font-size: 16px; font-weight: 700; color: #121212;">Divine Word</h5>
+                                                                    <ul>
+                                                                        <li><a href="about-dwu-vision.html">Vision</a></li>
+                                                                        <li><a href="faith-mission.html">Faith & Mission</a></li>
+                                                                        <li><a href="faith-catholic-tradition.html">Catholic Tradition</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="mm1-com mm1-s3">
+                                                                    <h5 style="margin-bottom: 15px; font-size: 16px; font-weight: 700; color: #121212;">President Offices</h5>
+                                                                    <ul>
+                                                                        <li><a href="president-details.html">President</a></li>
+                                                                        <li><a href="vp-academics.html">Vice President Academic Affairs</a></li>
+                                                                        <li><a href="vp-operations.html">Vice President Operation</a></li>
+                                                                        <li><a href="vp-planning-and-dev.html">Vice President Planning & Development</a></li>
+                                                                        <li><a href="dwu.html">DWU</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="mm1-com mm1-s4">
+                                                                    <h5 style="margin-bottom: 15px; font-size: 16px; font-weight: 700; color: #121212;">Administrative Divisions</h5>
+                                                                    <ul>
+                                                                        <li><a href="hr-dept.html">Human Resource Management</a></li>
+                                                                        <li><a href="ict-dept.html">ICT Services</a></li>
+                                                                        <li><a href="finance-dept.html">Finance</a></li>
+                                                                        <li><a href="quality-assurance-dept.html">Quality Assurance</a></li>
+                                                                        <li><a href="marketing-dept.html">Marketing</a></li>
+                                                                        <li><a href="partnership-dept.html">Partnership</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <!-- END OF MEGA MENU ABOUT US -->
+                                                <!------- Start of Study at DWU ------>
+                                                <li class="cour-menu">
+                                                    <a href="study-at-dwu.html" class="mm-arr">Study at DWU</a>
+                                                    <div class="mm-pos">
+                                                        <div class="cour-mm m-menu">
+                                                            <div class="m-menu-inn">
+                                                                <div class="mm1-com mm1-cour-com mm1-s3">
+                                                                    <h4>Find a Program</h4>
+                                                                    <ul>
+                                                                        <li><a href="course-filter.html">All Programs</a></li>
+                                                                        <li><a href="high-school-leavers.html">High school leavers</a></li>
+                                                                        <li><a href="non-school-leavers.html">Non School Leavers</a></li>
+                                                                    </ul>
+                                                                    <h4 class="ed-dr-men-mar-top">How to Apply</h4>
+                                                                    <ul>
+                                                                        <li><a href="undergraduate-students.html">Undergraduate Students</a></li>
+                                                                        <li><a href="post-graduate-students.html">Postgraduate Students</a></li>
+                                                                        <li><a href="diploma-students.html">Diploma Students</a></li>
+                                                                        <li><a href="flexible-learning-students.html">Flexible Learning Students</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="mm1-com mm1-cour-com mm1-s3">
+                                                                    <h4>Student Services</h4>
+                                                                    <ul>
+                                                                        <li><a href="student-stories.html">Student Stories</a></li>
+                                                                        <li><a href="student-accommodation.html">Student Accommodation</a></li>
+                                                                        <li><a href="student-safety.html">Students Safety</a></li>
+                                                                        <li><a href="councelling-services.html">Counselling Services</a></li>
+                                                                    </ul>
+                                                                    <h4 class="ed-dr-men-mar-top">Campus Facilities</h4>
+                                                                    <ul>
+                                                                        <li><a href="global-travels-center.html">Global Travels</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="mm1-com mm1-cour-com mm1-s3">
+                                                                    <h4>Clubs and Activities</h4>
+                                                                    <ul>
+                                                                        <li><a href="chapliancy.html">Chaplaincy</a></li>
+                                                                        <li><a href="std-associations-clubs.html">Student Clubs and Associations</a></li>
+                                                                        <li><a href="upcoming-events.html">Upcoming Events</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <!------- End of Study at DWU --------->
+                                                <!---- Start of Research Menu ---->
+                                                <li class="has-submenu">
+                                                    <a href="research-page.html">Research</a>
+                                                    <ul class="sub-menu">
+                                                        <li><a href="{% url 'research:doctor-of-philosophy' %}">The Doctor of Philosophy (PhD) program</a></li>
+                                                        <li><a href="{% url 'research:master-of-philosophy' %}">The Master of Philosophy (MPhil) program</a></li>
+                                                        <li><a href="{% url 'research:master-of-research-methodology' %}">Master in Research Methodology (MRM)</a></li>
+                                                        <li><a href="{% url 'research:doctor-of-education' %}">The Doctor of Education (EdD) program</a></li>
+                                                    </ul>
+                                                </li>
+                                                <!--- End of Research Menu ---->
+
+                                                <!---- Start of Learning and Teaching Menu ---->
+                                                <li class=""><a href="https://www.dwu.ac.pg/clt/">Learning and Teaching</a></li>
+
+                                                <!--- End of Learning and Teaching Menu ---->
+
+                                                <!---- Start of Campuses Menu ---->
+                                                <li class="admi-menu">
+                                                    <a href="all-campuses.html" class="mm-arr">Campuses</a>
+                                                    <!-- MEGA MENU 1 -->
+                                                    <div class="mm-pos">
+                                                        <div class="admi-mm m-menu">
+                                                            <div class="m-menu-inn">
+                                                                <!-- First Row: 3 Campuses -->
+                                                                <div class="mm2-com mm1-com mm1-s2">
+                                                                    <div class="ed-course-in">
+                                                                        <a class="course-overlay" href="madang-campus.html">
+                                                                            <img src="assets/images/madang1.jpg" alt="">
+                                                                            <span>Madang Campus</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <p style="font-size: 11px; line-height: 1.4; margin: 8px 0; color: #666;">Our main campus located in the beautiful coastal town of Madang. Experience quality education in a vibrant tropical setting with modern facilities.</p>
+                                                                    <a href="madang-campus.html" class="mm-r-m-btn">Read more</a>
+                                                                </div>
+                                                                <div class="mm2-com mm1-com mm1-s2">
+                                                                    <div class="ed-course-in">
+                                                                        <a class="course-overlay" href="pom-campus.html">
+                                                                            <img src="assets/images/morseby1.jpg" alt="">
+                                                                            <span>Port Morseby Campus</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <p style="font-size: 11px; line-height: 1.4; margin: 8px 0; color: #666;">Strategic location in Port Moresby, PNG's capital city. Access to industry partnerships and urban learning opportunities with state-of-the-art resources.</p>
+                                                                    <a href="pom-campus.html" class="mm-r-m-btn">Read more</a>
+                                                                </div>
+                                                                <div class="mm2-com mm1-com mm1-s2">
+                                                                    <div class="ed-course-in">
+                                                                        <a class="course-overlay" href="wewak-campus.html">
+                                                                            <img src="assets/images/wewak1.jpg" alt="">
+                                                                            <span>Wewak Campus</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <p style="font-size: 11px; line-height: 1.4; margin: 8px 0; color: #666;">Nestled in East Sepik Province, offering accessible higher education. Strong community connections and culturally rich learning environment for regional students.</p>
+                                                                    <a href="wewak-campus.html" class="mm-r-m-btn">Read more</a>
+                                                                </div>
+                                                                <div class="mm2-com mm1-com mm1-s2">
+                                                                    <div class="ed-course-in">
+                                                                        <a class="course-overlay" href="rabaul-campus.html">
+                                                                            <img src="assets/images/rabaul1.jpg" alt="">
+                                                                            <span>Rabaul Campus</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <p style="font-size: 11px; line-height: 1.4; margin: 8px 0; color: #666;">Located in historic East New Britain, combining heritage with innovation. Unique blend of maritime culture and academic excellence in the Islands region.</p>
+                                                                    <a href="rabaul-campus.html" class="mm-r-m-btn">Read more</a>
+                                                                </div>
+                                                                <div class="mm2-com mm1-com mm1-s2">
+                                                                    <div class="ed-course-in">
+                                                                        <a class="course-overlay" href="hagen-campus.html">
+                                                                            <img src="assets/images/tabubil1.jpg" alt="">
+                                                                            <span>Mt. Hagen Campus</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <p style="font-size: 11px; line-height: 1.4; margin: 8px 0; color: #666;">Serving Western Province's mining community with specialized programs. Partnership with industry leaders providing practical skills and career pathways.</p>
+                                                                    <a href="hagen-campus.html" class="mm-r-m-btn">Read more</a>
+                                                                </div>
+                                                                <div class="mm2-com mm1-com mm1-s2">
+                                                                    <div class="ed-course-in">
+                                                                        <a class="course-overlay" href="arob-campus.html">
+                                                                            <img src="assets/images/test/about us.png" alt="">
+                                                                            <span>AROB Campus</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <p style="font-size: 11px; line-height: 1.4; margin: 8px 0; color: #666;">Expanding access to quality education in rural areas. Focus on agricultural studies and sustainable development with hands-on learning experiences.</p>
+                                                                    <a href="arob-campus.html" class="mm-r-m-btn">Read more</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <!--- End of Campuses Menu ---->
+                                                <!--------- Online Payments Start Here  -------->
+                                              <!--  <li class="menu-online-payments"><a href="{% url 'research:home' %}">Online Payments</a></li> -->
+                                                <!--------- Online Payments End Here  --------->
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                                <!-- Header Meta Start -->
+                                <div class="header-meta">
+                                    <!-- Header Search Start -->
+                                    <div class="header-search">
+                                        <a class="search-btn" href="#"><i class="flaticon-loupe"></i></a>
+                                        <div class="search-wrap">
+                                            <div class="search-inner">
+                                                <i id="search-close" class="flaticon-close search-close"></i>
+                                                <div class="search-cell">
+                                                    <form action="#">
+                                                        <div class="search-field-holder">
+                                                            <input class="main-search-input" type="search" placeholder="Search Your Keyword...">
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Header Search End -->
+                                </div>
+                                <!-- Header Meta End  -->
+                            </div>
+                        </div>
+                        <!-- Header Wrap End  -->
+                    </div>
+                    <!-- Header Bottom Container End Here -->
+                </div>
+                <!-- Header Bottom End Here -->
+            </div>
+
+                <!-- Page Banner -->
+        <div class='section page-banner-section'>
+            <img src="{% static 'research/images/banner.png' %}" alt="Doctor of Education banner" class='banner-image'>
+            <div class='container'>
+                <div class='page-banner-content'>
+                    <h1>Doctor of Education (EdD)</h1>
+                    <p>DWU Postgraduate & Research Centre</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- EdD Course Information -->
+        <div class='section phd-course-section'>
+            <div class='container'>
+                <div class='course-layout'>
+                    <div class='course-main'>
+                        <div class='course-block course-overview'>
+                            <h2>Program Overview</h2>
+                            <p>The Doctor of Education (EdD) is a program of research and advanced study which enables the candidate to make a significant contribution to knowledge and practice in their professional context. The candidate may also contribute more generally to scholarship within a discipline or field of study. The EdD is an award different from, but complementary to, the Doctor of Philosophy (PhD). The EdD is recommended for those who wish to study and research in areas associated with their professional life in education.</p>
+                        </div>
+
+                        <div class='course-block course-admission'>
+                            <h2>Admission Requirements</h2>
+                            <p>Candidates must possess a minimum of a Master&apos;s degree from a recognised institution, with demonstrated research skills and relevant research experience.</p>
+                        </div>
+
+                        <div class='course-block course-units'>
+                            <h2>Description of Units</h2>
+                            <p>Candidates NOT continuing to thesis units may exit with a Graduate Certificate in Educational Research if they successfully complete ED801, ED802 and ED803. Candidates gaining Credit grades or better in these units are eligible to proceed to thesis units.</p>
+                            <h3>Unit 1: ED801 Identifying the Research Problem (Year 1, Semester 1)</h3>
+                            <p>This unit aims to assist candidates to clarify their research problem by analyzing the context from which it is derived and by doing an initial search of relevant core literature to identify conceptual issues which illuminate and amplify the problem.</p>
+                            <h3>Unit 2: ED802 Crafting the Literature Review (Year 1, Semester 2)</h3>
+                            <p>This unit aims to assist candidates to master the skills of searching for relevant key research literature that will inform their research topics, critique and select those that are significant, are generally published in reputable databases, and widen the study problem.</p>
+                            <h3>Unit 3: ED803 Designing the Research Study (Year 2, Semester 3)</h3>
+                            <p>In the designing the research study unit the candidates acquire different research paradigms and perspectives, research methodologies or approaches and their methods of data gathering strategies, sources of data, data gatherings tools and forms of data analysis techniques.</p>
+                            <h3>Unit 4: ED804 Thesis Work 1 (Year 2-3, Semesters 4-6)</h3>
+                            <p><strong>Semester 4:</strong> This unit is to complete a research proposal based on the work done in units ED801, ED802 and ED803, submit an ethics clearance application form to the University Research Ethics Committee (UREC), gain approval and, confirmation seminar presentation for candidature to proceed with data collection. A candidate is expected to consider UREC feedback and amend planned activities as necessary.</p>
+                            <p><strong>Semesters 5 &amp; 6:</strong> The unit is the period for field data collection, anticipated to take 6 months. Data is recorded and iteratively analysed. Candidate on data display, analysis and interpretation procedures as well as use of suitable software.</p>
+                            <h3>Unit 5: ED805 Thesis Work 2 (Year 4, Semesters 7 &amp; 8)</h3>
+                            <p>This unit focuses on writing the thesis results chapter. Candidates develop outlines, organise key themes, prepare draft sections, and refine their work through regular feedback from principal and co-supervisors. The process strengthens academic writing, critical analysis, and presentation of research findings in a clear and structured manner.</p>
+                            <h3>Unit 6: ED806 Thesis Work 3 (Year 5 &amp; 6, Semesters 9-12)</h3>
+                            <p>In this unit, candidates critically interpret research findings through relevant theories and reviewed literature while developing a compelling discussion chapter. They also craft the concluding chapter, addressing the research questions and problem statement. Candidates finalise the thesis by proofreading, verifying references, preparing preliminary pages, and delivering a pre-completion seminar six months before examination submission.</p>
+                        </div>
+                    </div>
+                    <div class='course-sidebar'>
+
+                        <div class='course-block course-purpose'>
+                            <h2>Program Outcomes</h2>
+                            <p>Graduates of the Doctorate Program will be equipped to assume advanced professional and leadership roles, including:</p>
+                            <ul>
+                                <li>Senior Educational Researchers</li>
+                                <li>Educational Leaders and Policy Influencers</li>
+                                <li>Specialist Education Consultants</li>
+                                <li>University Academics and Lecturers</li>
+                                <li>Curriculum and Policy Development Specialists</li>
+                            </ul>
+                            <p>These outcomes prepare graduates to lead high-level research, influence educational policy and reform, drive institutional improvement, and contribute significantly to the advancement of education nationally and internationally.</p>
+                        </div>
+                        <div class='course-block course-costs'>
+                            <h2>Program Details</h2>
+                            <ul>
+                                <li><strong>Tuition Fees:</strong> K5,000 per semester</li>
+                                <li><strong>Boarding and Lodging:</strong> Additional costs apply (please consult Student Services for details)</li>
+                                <li><strong>Program Duration:</strong> 4 years (Full-time) / 6-8 years (Part-time)</li>
+                                <li><strong>Program Level:</strong> Doctoral Program</li>
+                                <li><strong>Scholarships:</strong> Candidates may be self-sponsored or receive financial support through government scholarships, NGOs, donor agencies, and corporate sponsors</li>
+                            </ul>
+                        </div>
+                        <div class='course-block course-program-info'>
+                            <h2>Program Information</h2>
+                            <ul>
+                                <li><strong>Program Name:</strong> Doctor of Education</li>
+                                <li><strong>Level:</strong> Postgraduate</li>
+                                <li><strong>Mode of study:</strong> Part time - 6 years | Fulltime - 4 years</li>
+                                <li><strong>Campus:</strong> Madang</li>
+                            </ul>
+                        </div>
+                        <div class='course-block course-account'>
+                            <h2>Account Details for Fee Payments</h2>
+                            <ul>
+                                <li><strong>Bank:</strong> BSP Madang</li>
+                                <li><strong>Branch No.:</strong> 960</li>
+                                <li><strong>Account No.:</strong> 1000 433 578</li>
+                                <li><strong>Account Name:</strong> TDEC / DWU</li>
+                            </ul>
+                        </div>
+                        <div class='course-block course-contact'>
+                            <h2>Contact</h2>
+                            <p>For application forms or information, contact:</p>
+                            <p><strong>The Post Graduate and Research Centre</strong><br>
+                            Divine Word University<br>
+                            PO Box 483<br>
+                            Madang, 511, Papua New Guinea</p>
+                            <p><strong>Ph.</strong> (675) 424 1830 Ext: 830<br>
+                            <strong>Fax.</strong> (675) 422 1312<br>
+                            <strong>Email:</strong> <a href='mailto:pgrc@dwu.ac.pg'>pgrc@dwu.ac.pg</a></p>
+
+                            <p class='updated'>Updated April 2024</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Section Start -->
+        <div class='section footer-section'>
+            <div class='footer-copyright-area'>
+                <div class='container'>
+                    <div class='footer-copyright-wrap'>
+                        <div class='row align-items-center'>
+                            <div class='col-lg-6'>
+                                <div class='copyright-text'>
+                                    <p>&copy; Copyrights <span id='year'></span> DWU - Divine Word University | Developed By DevOps Team. </p>
+                                </div>
+                            </div>
+                            <div class='col-lg-6'>
+                                <div class='footer-copyright-links'>
+                                    <a href='faq.html'>Trams & Condition</a>
+                                    <a href='contact.html'>Privacy Policy </a>
+                                    <a href='contact.html'>Contact Us</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='progress-wrap'>
+            <svg class='progress-circle svg-content' width='100%' height='100%' viewBox='-1 -1 102 102'>
+                <path d='M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98' />
+            </svg>
+        </div>
+    </div>
+
+</body>
+</html>

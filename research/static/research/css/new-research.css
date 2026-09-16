@@ -1,0 +1,162 @@
+/* PhD course page styles - all custom styles for course information sheets go here */
+.page-banner-section {
+    position: relative;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 140px;
+    padding-bottom: 50px;
+    color: #ffffff;
+    overflow: hidden;
+}
+.page-banner-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 46, 91, 0.55);
+    z-index: 1;
+}
+.banner-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+.page-banner-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+.page-banner-content h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+.page-banner-content p {
+    font-size: 18px;
+    color: #ffffff;
+    margin-bottom: 0;
+}
+.phd-course-section {
+    padding-top: 80px;
+    padding-bottom: 100px;
+    background: #ffffff;
+}
+.course-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: flex-start;
+}
+.course-main {
+    flex: 2;
+    min-width: 0;
+}
+.course-sidebar {
+    flex: 1;
+    min-width: 320px;
+}
+.course-main .course-block {
+    margin-bottom: 50px;
+}
+.course-sidebar .course-block {
+    margin-bottom: 25px;
+    padding: 25px;
+    background: #f8f9fa;
+    border: 1px solid #e8e8e8;
+    border-radius: 8px;
+}
+.course-block h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    color: #021E40;
+    margin-bottom: 15px;
+    padding-bottom: 0;
+}
+.course-block h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    color: #021E40;
+    margin-top: 24px;
+    margin-bottom: 10px;
+}
+.course-block p, .course-block ul {
+    color: #555555;
+    line-height: 1.8;
+    margin-bottom: 12px;
+}
+.course-block ul {
+    padding-left: 20px;
+    list-style: disc;
+}
+.course-block li {
+    margin-bottom: 8px;
+}
+.course-account ul {
+    list-style: none;
+    padding-left: 0;
+}
+.course-contact a {
+    color: #009959;
+    text-decoration: none;
+}
+.course-contact a:hover {
+    color: #007744;
+}
+.updated {
+    font-style: italic;
+    color: #888888;
+    margin-top: 20px;
+}
+.btn-download {
+    display: block;
+    width: 100%;
+    padding: 14px 28px;
+    background: #009959;
+    color: #ffffff;
+    font-weight: 600;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    transition: background 0.3s ease;
+    box-sizing: border-box;
+}
+.btn-download:hover {
+    background: #007744;
+}
+@media only screen and (max-width: 991px) {
+    .course-layout {
+        flex-direction: column;
+    }
+    .course-main, .course-sidebar {
+        flex: 1 1 100%;
+        min-width: 0;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .page-banner-section {
+        padding-top: 120px;
+        padding-bottom: 40px;
+    }
+    .page-banner-content h1 {
+        font-size: 30px;
+    }
+    .course-block h2 {
+        font-size: 20px;
+    }
+}
+@media only screen and (min-width: 992px) {
+    .page-banner-section {
+        align-items: flex-end;
+        padding-bottom: 80px;
+    }
+}
