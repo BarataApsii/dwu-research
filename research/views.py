@@ -1,6 +1,10 @@
 from django.shortcuts import render
 
 
+def research(request):
+    return render(request, 'research/research.html')
+
+
 def doctor_of_philosophy(request):
     return render(request, 'research/doctor-of-philosophy.html')
 

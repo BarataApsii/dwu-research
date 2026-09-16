@@ -4,18 +4,18 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='x-ua-compatible' content='ie=edge'>
-    <title>Master in Research Methodology (MRM) - DWU</title>
+    <title>Research - DWU</title>
     <meta name='robots' content='noindex, follow'>
-    <meta name='description' content='Study the Master in Research Methodology at Divine Word University through blended learning and develop practical research skills across disciplines.'>
+    <meta name='description' content='Postgraduate research programs at Divine Word University'>
     <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
     <link rel='shortcut icon' type='image/x-icon' href="{% static 'research/images/logo.png' %}">
-
     <link href='https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap' rel='stylesheet'>
     <link rel='stylesheet' href="{% static 'research/css/research.css' %}">
     <link rel='stylesheet' href="{% static 'research/css/new-research.css' %}">
 </head>
 <body>
     <div class='main-wrapper'>
+        <!-- Header Section -->
         <div class="section header-section">
                 <div class="header-top-section">
                     <div class="container">
@@ -221,8 +221,8 @@
                                                             </div>
                                                             <ul class="category-items">
                                                                 <li><a href="{% url 'research:doctor-of-philosophy' %}">Doctor of Philosophy (PhD)</a></li>
-                                                                <li><a href="{% url 'research:master-of-philosophy' %}">Master of Philosophy (MPhil)</a></li>
                                                                 <li><a href="{% url 'research:master-of-research-methodology' %}">Master in Research Methodology (MRM)</a></li>
+                                                                <li><a href="{% url 'research:master-of-philosophy' %}">Master of Philosophy (MPhil)</a></li>
                                                                 <li><a href="{% url 'research:doctor-of-education' %}">Doctor of Education (EdD)</a></li>
                                                             </ul>
                                                         </li>
@@ -395,11 +395,11 @@
                                                 <!------- End of Study at DWU --------->
                                                 <!---- Start of Research Menu ---->
                                                 <li class="has-submenu">
-                                                    <a href="research-page.html">Research</a>
+                                                    <a href="{% url 'research:home' %}">Research</a>
                                                     <ul class="sub-menu">
                                                         <li><a href="{% url 'research:doctor-of-philosophy' %}">The Doctor of Philosophy (PhD) program</a></li>
-                                                        <li><a href="{% url 'research:master-of-philosophy' %}">The Master of Philosophy (MPhil) program</a></li>
                                                         <li><a href="{% url 'research:master-of-research-methodology' %}">Master in Research Methodology (MRM)</a></li>
+                                                        <li><a href="{% url 'research:master-of-philosophy' %}">The Master of Philosophy (MPhil) program</a></li>
                                                         <li><a href="{% url 'research:doctor-of-education' %}">The Doctor of Education (EdD) program</a></li>
                                                     </ul>
                                                 </li>
@@ -520,120 +520,113 @@
                 <!-- Header Bottom End Here -->
             </div>
 
-        <!-- Page Banner -->
+                <!-- Hero / Banner -->
         <div class='section page-banner-section'>
-            <img src="{% static 'research/images/banner.png' %}" alt="Master in Research Methodology banner" class='banner-image'>
+            <img src='{% static "research/images/banner.png" %}' alt='Research banner' class='banner-image'>
             <div class='container'>
                 <div class='page-banner-content'>
-                    <h1>Master in Research Methodology (MRM)</h1>
-                    <p>DWU Postgraduate & Research Centre</p>
+                    <h1 class='page-title'>Postgraduate Research</h1>
+                    <p>DWU Postgraduate &amp; Research Centre</p>
                 </div>
             </div>
         </div>
 
-        <!-- MRM Course Information -->
-        <div class='section phd-course-section'>
+        <!-- Research Introduction -->
+        <div class='section section-padding' style="padding-bottom: 30px;">
             <div class='container'>
-                <div class='course-layout'>
-                    <div class='course-main'>
-                        <div class='course-block course-overview'>
-                            <h2>Program Overview</h2>
-                            <p>The Master in Research Methodology (MRM) program specializes in research paradigms, methodologies and methods that are relevant across all disciplines. The student's choice of a research problem to investigate influences the Faculty under which they are enrolled.</p>
-                            <p>The MRM program is offered in blended learning mode. Students take two units a semester and complete the program in two and a half or three years. Students are required to participate in a one-week residential component per unit in each semester and are expected to have their own personal laptop and reliable internet connectivity.</p>
-                            <p>An optional Week O is offered for all new intakes in Semester 1. It covers registration, orientation, ICT skills, Moodle training, academic writing, APA referencing and library skills to prepare students for their academic studies.</p>
-                        </div>
-                        <div class='course-block course-purpose'>
-                            <h2>Purpose</h2>
-                            <p>The MRM Program aims to produce graduates capable of undertaking research using appropriate research methods. The skills gained are ideal for students wishing to pursue doctoral studies at a later date.</p>
-                        </div>
-                        <div class='course-block course-facilities'>
-                            <h2>Facilities</h2>
-                            <p>Divine Word University offers excellent, modern, residential, teaching and ICT facilities in a beautiful, friendly and peaceful environment.</p>
-                        </div>
-                        <div class='course-block course-admission'>
-                            <h2>Admission Requirements</h2>
-                            <p>Applicants must normally hold a Bachelor's degree with an average grade of Credit or higher. English writing skills are essential and applicants may also be asked to demonstrate their English writing skills before being accepted.</p>
-                        </div>
-                        <div class='course-block course-costs'>
-                            <h2>Costs</h2>
-                            <ul>
-                                <li>K100 non-refundable application fee.</li>
-                                <li>K3,500 per unit per semester for tuition, internet access when on campus and supervisory services. A semester comprises two to three units.</li>
-                                <li>Current fee for on-campus accommodation and meals is K2,800 per fortnight (K200 per day).</li>
-                                <li>An additional fee of K1,400 is charged for Week O. Travel, accommodation and meals are additional.</li>
-                                <li>An extra fee of K20 per student is charged for each airport shuttle.</li>
-                            </ul>
-                        </div>
-                        <div class='course-block course-units'>
-                            <h2>Description of Units</h2>
-                            <p>Each unit has a 15-credit-point value except the Research Dissertation, which has 30 credit points. Students must gain 150 credit points to be eligible to graduate with the award.</p>
-                            <h3>Unit 1: RM613 Resources for Applied Research in Papua New Guinea</h3>
-                            <p>This unit introduces students to the foundation documents for multidisciplinary research in Papua New Guinea. By the end of the unit, students should know where to find background information for any research topic.</p>
-                            <h3>Unit 2: RM610 Theory and Methods for Applied Research</h3>
-                            <p>This unit explores key research theories and paradigms and their suitability in particular situations. Students investigate scientific, social and indigenous research, study qualitative, quantitative and mixed-methods research tools, and explore the contexts in which they are used.</p>
-                            <h3>Unit 3: RM603 Crafting the Literature Review</h3>
-                            <p>This unit helps students master the skills needed to select and critique relevant research literature that informs their research topics and to make sense of the discussions presented in that literature.</p>
-                            <h3>Unit 4: RM606 Ethics in Research</h3>
-                            <p>This unit introduces ethical concepts and theories that underpin applied ethical decision-making in research involving human participants. It also examines the historical and legal context that makes ethics relevant to research today.</p>
-                            <h3>Unit 5: RM607 Developing the Research Proposal</h3>
-                            <p>This unit assists candidates to define, plan and develop a research proposal in their respective fields that meets the requirements of the University's Research Ethics Committee.</p>
-                            <h3>Unit 6: RM615 Quantitative Research Methods</h3>
-                            <p>This unit builds on RM610 by focusing on quantitative research approaches, methods and techniques. It introduces the main quantitative approaches and the methods students can adopt when designing a quantitative study for their research project.</p>
-                            <h3>Unit 7: RM614 Qualitative Research Methods</h3>
-                            <p>This unit builds on RM610 by focusing on qualitative approaches such as ethnography, action research, phenomenological research, narrative research and grounded theory. It also covers data-collection instruments, data analysis and ethical considerations.</p>
-                            <h3>Unit 8: RM605 Interpreting and Analyzing Data</h3>
-                            <p>This unit focuses on organizing, coding and displaying fieldwork data for analysis and interpretation. Students become familiar with techniques for qualitative, quantitative and mixed-methods data presentation and analysis.</p>
-                            <h3>Unit 9: RM608 The Research Dissertation (30 Credit Points)</h3>
-                            <p>Students work closely with their supervisor so that the research process, data analysis and interpretation are mentored and monitored. The unit concludes with the production and examination of a dissertation of no more than 20,000 words.</p>
-                        </div>
+               
+                <div class='intro-row'>
+                    <div class='intro-text'>
+                        <p>Divine Word University is committed to building a vibrant research community that addresses national and regional challenges. The Postgraduate and Research Centre provides a supportive environment where candidates work alongside experienced supervisors to produce high-quality scholarship.</p>
+                        <p>Our programs are designed to develop independent researchers, critical thinkers and leaders who can contribute to policy, practice and the advancement of knowledge. Whether you are beginning your research journey or building on advanced expertise, DWU offers flexible pathways to help you achieve your goals.</p>
                     </div>
-                    <div class='course-sidebar'>
-                        <div class='course-block course-download'>
-                            <h2>Application Form</h2>
-                            <a href='Docs/DWU_MRM%20Application%20Form%20250425.docx' class='btn-download' download>Download</a>
-                        </div>
-                        <div class='course-block course-info-sheet'>
-                            <h2>Course Information Sheet</h2>
-                            <a href='Docs/MRM%20Course%20Information%20Sheet%20270625.pdf' class='btn-download' download>Download</a>
-                        </div>
-                        <div class='course-block course-program-info'>
-                            <h2>Program Information</h2>
+                    <div class='intro-links'>
+                        <div class='quick-links'>
+                            <h4>Quick Links</h4>
                             <ul>
-                                <li><strong>Program Name:</strong> master of research methodology (MRM)</li>
-                                <li><strong>Level:</strong> Postgraduate</li>
-                                <li><strong>Mode of study:</strong> Flexible Blended</li>
-                                <li><strong>Duration of study:</strong> 3 years</li>
-                                <li><strong>Campus:</strong> Madang</li>
+                                <li><a href="{% url 'research:doctor-of-philosophy' %}">Doctor of Philosophy (PhD)</a></li>
+                                <li><a href="{% url 'research:master-of-philosophy' %}">Master of Philosophy (MPhil)</a></li>
+                                <li><a href="{% url 'research:master-of-research-methodology' %}">Master in Research Methodology (MRM)</a></li>
+                                <li><a href="{% url 'research:doctor-of-education' %}">Doctor of Education (EdD)</a></li>
                             </ul>
-                        </div>
-                        <div class='course-block course-account'>
-                            <h2>Account Details for Fee Payments</h2>
-                            <ul>
-                                <li><strong>Bank:</strong> BSP Madang</li>
-                                <li><strong>Branch No.:</strong> 960</li>
-                                <li><strong>Account No.:</strong> 1000 433 578</li>
-                                <li><strong>Account Name:</strong> TDEC / DWU</li>
-                            </ul>
-                        </div>
-                        <div class='course-block course-contact'>
-                            <h2>Contact</h2>
-                            <p>For application forms or information, contact:</p>
-                            <p><strong>The Post Graduate and Research Centre</strong><br>
-                            Divine Word University<br>
-                            PO Box 483<br>
-                            Madang, 511, Papua New Guinea</p>
-                            <p><strong>Ph.</strong> (675) 424 1830 Ext: 830<br>
-                            <strong>Fax.</strong> (675) 422 1312<br>
-                            <strong>Email:</strong> <a href='mailto:pgrc@dwu.ac.pg'>pgrc@dwu.ac.pg</a></p>
-
-                            <p class='updated'>Updated April 2024</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Footer Section Start -->
+        <!-- Research Programs Summary -->
+        <div class='section section-padding' style="padding-top: 0;">
+            <div class='container'>
+                <div class='research-programs-grid'>
+                    <div class='program-card program-card--text-left blog-list blog-small border-div'>
+                        <div class='blog-caption program-card-content'>
+                            <h3 class='blog-title'><a href="{% url 'research:doctor-of-philosophy' %}">Doctor of Philosophy (PhD)</a></h3>
+                            <p>The Doctor of Philosophy (PhD) program is completed by a research thesis of about 80,000 words on an approved topic under the guidance of a supervisory team. The candidate demonstrates the capacity to carry out independent research.</p>
+                            <p>The PhD program is offered in both full-time and part-time study modes. Students maintain regular communication with their supervisory team, and the program culminates with external examination of the thesis for the candidate to be eligible for the award.</p>
+                            <p>The normal period of candidature is four years full-time or six years part-time. The PhD award by thesis alone is recommended for those in, or aiming to enter, an academic position or a professional research post.</p>
+                            <a class='iq_link_1' href="{% url 'research:doctor-of-philosophy' %}">Learn More</a>
+                        </div>
+                        <img src="{% static 'research/images/students.png' %}" alt='Research students' class='program-card-image'>
+                    </div>
+
+                    <div class='program-card program-card--text-right blog-list blog-small border-div'>
+                        <div class='blog-caption program-card-content'>
+                            <h3 class='blog-title'><a href="{% url 'research:master-of-philosophy' %}">Master of Philosophy (MPhil)</a></h3>
+                            <p>The Master of Philosophy (MPhil) program is completed by a research thesis of about 40,000 words on an approved topic under the guidance of a supervisory team. The candidate demonstrates the capacity to carry out independent research.</p>
+                            <p>The MPhil program is offered as a stand-alone degree and a stepping stone to the PhD, providing an internationally recognized award of a higher level of supervised scholarship at master&apos;s level.</p>
+                            <p>The normal period of candidature is two years full-time or four years part-time. The program culminates with external examination of the thesis, which must be passed for the candidate to be eligible for the award.</p>
+                            <a class='iq_link_1' href="{% url 'research:master-of-philosophy' %}">Learn More</a>
+                        </div>
+                        <img src="{% static 'research/images/students.png' %}" alt='Research students' class='program-card-image'>
+                    </div>
+
+                    <div class='program-card program-card--text-left blog-list blog-small border-div'>
+                        <div class='blog-caption program-card-content'>
+                            <h3 class='blog-title'><a href="{% url 'research:master-of-research-methodology' %}">Master in Research Methodology (MRM)</a></h3>
+                            <p>The Master in Research Methodology (MRM) program specializes in research paradigms, methodologies and methods that are relevant across all disciplines. The student&apos;s choice of a research problem to investigate influences the Faculty under which they are enrolled.</p>
+                            <p>The MRM program is offered in blended learning mode. Students take two units a semester and complete the program in two and a half or three years, including a one-week residential component per unit and an optional Week O orientation for new intakes.</p>
+                            <p>The program aims to produce graduates capable of undertaking research using appropriate methods. The skills gained are ideal for students wishing to pursue doctoral studies at a later date.</p>
+                            <a class='iq_link_1' href="{% url 'research:master-of-research-methodology' %}">Learn More</a>
+                        </div>
+                        <img src="{% static 'research/images/students.png' %}" alt='Research students' class='program-card-image'>
+                    </div>
+
+                    <div class='program-card program-card--text-right blog-list blog-small border-div'>
+                        <div class='blog-caption program-card-content'>
+                            <h3 class='blog-title'><a href="{% url 'research:doctor-of-education' %}">Doctor of Education (EdD)</a></h3>
+                            <p>The Doctor of Education (EdD) is a program of research and advanced study which enables the candidate to make a significant contribution to knowledge and practice in their professional context. The candidate may also contribute more generally to scholarship within a discipline or field of study.</p>
+                            <p>The EdD is different from, but complementary to, the Doctor of Philosophy (PhD). It is recommended for those who wish to study and research in areas associated with their professional life in education. Graduates are equipped to assume advanced professional and leadership roles, including senior educational researchers, policy advisers, school leaders and curriculum and policy development specialists.</p>
+                            <a class='iq_link_1' href="{% url 'research:doctor-of-education' %}">Learn More</a>
+                        </div>
+                        <img src="{% static 'research/images/students.png' %}" alt='Research students' class='program-card-image'>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Banner -->
+        <div class='section' style="background: #f8f9fa; padding: 60px 0;">
+            <div class='container'>
+                <div class='section-title text-center'>
+                    <h2 class='title'>Contact Us</h2>
+                    <p class='sub-title'>For application forms or information, contact the Post Graduate and Research Centre.</p>
+                </div>
+                <div class='row justify-content-center'>
+                    <div class='col-lg-8 text-center'>
+                        <p><strong>The Executive Officer</strong><br>
+                        Post Graduate and Research Centre<br>
+                        Divine Word University<br>
+                        PO Box 483, Madang, 511, Papua New Guinea</p>
+                        <p><strong>Ph.</strong> (675) 422 1830 Ext: 830<br>
+                        <strong>Fax.</strong> (675) 422 1312<br>
+                        <strong>Email:</strong> <a href='mailto:pgrc@dwu.ac.pg'>pgrc@dwu.ac.pg</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Section -->
         <div class='section footer-section'>
             <div class='footer-copyright-area'>
                 <div class='container'>
@@ -641,14 +634,14 @@
                         <div class='row align-items-center'>
                             <div class='col-lg-6'>
                                 <div class='copyright-text'>
-                                    <p>&copy; Copyrights <span id='year'></span> DWU - Divine Word University | Developed By DevOps Team. </p>
+                                    <p>&copy; Copyrights <span id='year'></span> DWU - Divine Word University | Developed By DevOps Team.</p>
                                 </div>
                             </div>
                             <div class='col-lg-6'>
                                 <div class='footer-copyright-links'>
-                                    <a href='faq.html'>Trams & Condition</a>
-                                    <a href='contact.html'>Privacy Policy </a>
-                                    <a href='contact.html'>Contact Us</a>
+                                    <a href='#'>Terms &amp; Conditions</a>
+                                    <a href='#'>Privacy Policy</a>
+                                    <a href='#'>Contact Us</a>
                                 </div>
                             </div>
                         </div>
@@ -656,12 +649,83 @@
                 </div>
             </div>
         </div>
-        <div class='progress-wrap'>
-            <svg class='progress-circle svg-content' width='100%' height='100%' viewBox='-1 -1 102 102'>
-                <path d='M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98' />
-            </svg>
-        </div>
     </div>
 
+    <script>
+        (function() {
+            var mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            var closeMenuBtn = document.getElementById('closeMenuBtn');
+            var mobileNavMenu = document.getElementById('mobileNavMenu');
+            var mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+
+            function setMenu(open) {
+                if (mobileNavMenu) mobileNavMenu.classList.toggle('active', open);
+                if (mobileMenuOverlay) mobileMenuOverlay.classList.toggle('active', open);
+                if (closeMenuBtn) closeMenuBtn.classList.toggle('active', open);
+                if (mobileMenuToggle) {
+                    mobileMenuToggle.classList.toggle('active', open);
+                    mobileMenuToggle.setAttribute('aria-expanded', open);
+                }
+            }
+
+            if (mobileMenuToggle) mobileMenuToggle.addEventListener('click', function() { setMenu(true); });
+            if (closeMenuBtn) closeMenuBtn.addEventListener('click', function() { setMenu(false); });
+            if (mobileMenuOverlay) mobileMenuOverlay.addEventListener('click', function() { setMenu(false); });
+
+            document.querySelectorAll('.submenu-toggle').forEach(function(btn) {
+                btn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    var sub = this.closest('li').querySelector('.sub-menu');
+                    if (sub) {
+                        sub.classList.toggle('active');
+                        this.classList.toggle('active');
+                        this.setAttribute('aria-expanded', sub.classList.contains('active'));
+                    }
+                });
+            });
+
+            document.querySelectorAll('.category-toggle').forEach(function(btn) {
+                btn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    var items = this.closest('li').querySelector('.category-items');
+                    if (items) {
+                        items.classList.toggle('active');
+                        this.classList.toggle('active');
+                        this.setAttribute('aria-expanded', items.classList.contains('active'));
+                    }
+                });
+            });
+
+            var header = document.querySelector('.header-section');
+            var lastScroll = 0;
+            var scrollThreshold = 50;
+            if (header) {
+                window.addEventListener('scroll', function() {
+                    var currentScroll = window.pageYOffset;
+                    if (currentScroll > lastScroll && currentScroll > scrollThreshold) {
+                        header.classList.add('header-hidden');
+                    } else if (currentScroll < lastScroll) {
+                        header.classList.remove('header-hidden');
+                    }
+                    lastScroll = currentScroll <= 0 ? 0 : currentScroll;
+                });
+            }
+
+            var backToTop = document.getElementById('backToTop');
+            if (backToTop) {
+                window.addEventListener('scroll', function() {
+                    if (window.pageYOffset > 400) {
+                        backToTop.classList.add('visible');
+                    } else {
+                        backToTop.classList.remove('visible');
+                    }
+                });
+                backToTop.addEventListener('click', function() {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+        })();
+    </script>
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">&uarr;</button>
 </body>
 </html>
