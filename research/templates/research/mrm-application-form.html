@@ -542,7 +542,7 @@
                                 {% endfor %}
                             </div>
                             {% endif %}
-                            <form method='post' action=''>
+                            <form method='post' action='' enctype='multipart/form-data'>
                                 {% csrf_token %}
                                 <div class='form-row'>
                                     <div class='form-group'>
@@ -621,11 +621,21 @@
                                     <label for='mrm-statement'>Statement of Purpose</label>
                                     <textarea id='mrm-statement' name='statement_of_purpose' rows='5'></textarea>
                                 </div>
+                                <div class='form-group'>
+                                    <label for='mrm-qualification-docs'>Attach a certified copy of your highest qualification and transcript <span class='required'>*</span></label>
+                                    <input type='file' id='mrm-qualification-docs' name='qualification_documents' accept='.pdf,.jpg,.jpeg,.png' multiple required>
+                                </div>
                                 <div class='form-group form-checkbox'>
                                     <label for='mrm-declaration'>
                                         <input type='checkbox' id='mrm-declaration' name='declaration' required>
                                         I declare that the above information is true and correct to the best of my knowledge and belief.
                                     </label>
+                                </div>
+                                <p class='form-note'>A K100 non-refundable application fee applies to all new applications.<br>
+                                Bank: BSP Madang | Branch No: 960 | Account No: 1000 433 806 | Account Name: Divine Word University</p>
+                                <div class='form-group'>
+                                    <label for='mrm-fee-payment'>Upload a screenshot of your K100 application fee payment receipt (image file) <span class='required'>*</span></label>
+                                    <input type='file' id='mrm-fee-payment' name='fee_payment' accept='image/*' required>
                                 </div>
                                 <button type='submit' class='btn-submit'>Submit Application</button>
                             </form>

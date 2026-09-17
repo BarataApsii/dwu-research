@@ -1,5 +1,6 @@
 from django.contrib import messages
 from django.contrib.admin.views.decorators import staff_member_required
+from django.core.mail import send_mail
 from django.core.paginator import Paginator
 from django.db.models import Count, Q
 from django.shortcuts import get_object_or_404, redirect, render
@@ -52,11 +53,35 @@ def _save_application(request, program):
     return application
 
 
-def _handle_application_post(request, program, template):
+def _send_confirmation_email(application):
+    send_mail(
+        subject='Application received - Divine Word University',
+        message=(
+            f'Dear {application.applicant_name},\n\n'
+            f'Thank you for submitting your application for the {application.get_program_display()} '
+            f'at Divine Word University.\n\n'
+            f'Your application reference number is {application.reference}. '
+            f'The Postgraduate & Research Centre has received your application and it is now being processed.\n\n'
+            f'Please note that only successful applicants will be contacted regarding the outcome '
+            f'of their application.\n\n'
+            f'Kind regards,\n'
+            f'Postgraduate & Research Centre\n'
+            f'Divine Word University'
+        ),
+        from_email=None,
+        recipient_list=[application.email],
+    )
+
+
+def _handle_application_post(request, program, template, success_view):
     if request.method == 'POST':
-        _save_application(request, program)
-        messages.success(request, 'Your application has been submitted successfully. The Postgraduate & Research Centre will contact you by email.')
-        return redirect(request.path)
+        application = _save_application(request, program)
+        try:
+            _send_confirmation_email(application)
+        except Exception:
+            pass
+        messages.success(request, f'Your application has been submitted successfully. Your reference number is {application.reference}. Please note that only successful applicants will be contacted by the Postgraduate & Research Centre.')
+        return redirect(success_view)
     return render(request, template)
 
 
@@ -77,15 +102,15 @@ def master_of_research_methodology(request):
 
 
 def mrm_application_form(request):
-    return _handle_application_post(request, 'mrm', 'research/mrm-application-form.html')
+    return _handle_application_post(request, 'mrm', 'research/mrm-application-form.html', 'research:master-of-research-methodology')
 
 
 def mphil_application_form(request):
-    return _handle_application_post(request, 'mphil', 'research/mphil-application-form.html')
+    return _handle_application_post(request, 'mphil', 'research/mphil-application-form.html', 'research:master-of-philosophy')
 
 
 def phd_application_form(request):
-    return _handle_application_post(request, 'phd', 'research/phd-application-form.html')
+    return _handle_application_post(request, 'phd', 'research/phd-application-form.html', 'research:doctor-of-philosophy')
 
 
 def doctor_of_education(request):

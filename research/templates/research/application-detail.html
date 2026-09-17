@@ -1,13 +1,13 @@
 {% extends 'research/base.html' %}
 {% load static %}
-{% block title %}Application #{{ application.pk }} - DWU{% endblock %}
+{% block title %}Application {{ application.reference }} - DWU{% endblock %}
 {% block content %}
         <!-- Page Banner -->
         <div class='section page-banner-section'>
             <img src="{% static 'research/images/banner.png' %}" alt='Application detail banner' class='banner-image'>
             <div class='container'>
                 <div class='page-banner-content'>
-                    <h1>Application #{{ application.pk }}</h1>
+                    <h1>Application {{ application.reference }}</h1>
                     <p>{{ application.applicant_name }} &mdash; {{ application.get_program_display }}</p>
                 </div>
             </div>
@@ -162,6 +162,7 @@
                         <div class='detail-card'>
                             <h2>Submission Info</h2>
                             <div class='detail-grid'>
+                                <div class='detail-item detail-item-full'><span>Reference</span><strong>{{ application.reference }}</strong></div>
                                 <div class='detail-item detail-item-full'><span>Submitted</span><strong>{{ application.submitted_at|date:'d M Y, H:i' }}</strong></div>
                                 <div class='detail-item detail-item-full'><span>Last Updated</span><strong>{{ application.updated_at|date:'d M Y, H:i' }}</strong></div>
                                 <div class='detail-item detail-item-full'><span>Declaration Signed</span><strong>{% if application.declaration %}Yes{% else %}No{% endif %}</strong></div>

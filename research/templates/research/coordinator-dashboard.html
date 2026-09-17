@@ -93,7 +93,7 @@
                     <table class='applications-table'>
                         <thead>
                             <tr>
-                                <th>#</th>
+                                <th>Ref</th>
                                 <th>Applicant</th>
                                 <th>Program</th>
                                 <th>Study Mode</th>
@@ -106,7 +106,7 @@
                         <tbody>
                             {% for application in applications %}
                             <tr>
-                                <td>{{ application.pk }}</td>
+                                <td>{{ application.reference }}</td>
                                 <td>
                                     <a href="{% url 'research:application-detail' application.pk %}" class='applicant-name'>{{ application.applicant_name }}</a>
                                     {% if application.research_topic %}<span class='applicant-topic'>{{ application.research_topic|truncatechars:60 }}</span>{% endif %}

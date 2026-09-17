@@ -78,6 +78,10 @@ class Application(models.Model):
         ordering = ['-submitted_at']
 
     @property
+    def reference(self):
+        return f'PGRC-{self.pk:05d}'
+
+    @property
     def applicant_name(self):
         if self.full_name:
             return self.full_name
