@@ -4,9 +4,9 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='x-ua-compatible' content='ie=edge'>
-    <title>Doctor of Philosophy (PhD) - DWU</title>
+    <title>PhD Application Form - DWU</title>
     <meta name='robots' content='noindex, follow'>
-    <meta name='description' content=''>
+    <meta name='description' content='Apply for the Doctor of Philosophy (PhD) program at Divine Word University and undertake supervised doctoral research culminating in an externally examined thesis.'>
     <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
     <link rel='shortcut icon' type='image/x-icon' href="{% static 'research/images/logo.png' %}">
 
@@ -530,82 +530,267 @@
             </div>
         </div>
 
-        <!-- PhD Course Information -->
-        <div class='section phd-course-section'>
+                <!-- PhD Application Form -->
+        <div class='section application-section'>
             <div class='container'>
-                <div class='course-layout'>
-                    <div class='course-main'>
-                        <div class='course-block course-overview'>
-                            <h2>Program Overview</h2>
-                            <p>The Doctor of Philosophy (PhD) program is completed by a research thesis of about 80,000 words on an approved topic under the guidance of a supervisory team. The candidate demonstrates the capacity to carry out independent research.</p>
-                            <p>The PhD program is offered in both full-time and part-time study modes. Students are required to maintain regular communication with their supervisory team, to have their own personal laptop and reliable internet connectivity.</p>
-                            <p>The PhD program culminates with external examination of the thesis, to be passed, for the candidate to be eligible for the award. The normal period of candidature is four years full-time or six years part-time.</p>
-                        </div>
-                        <div class='course-block course-purpose'>
-                            <h2>Purpose</h2>
-                            <p>The PhD Program aims to produce scholars and scientists able to conduct research autonomously and to be able to contribute to the National Research Agenda. The PhD award by thesis alone is recommended for those in (or aiming to enter) an academic position or a professional research post.</p>
-                        </div>
-                        <div class='course-block course-facilities'>
-                            <h2>Facilities</h2>
-                            <p>Divine Word University offers excellent, modern, residential, teaching and ICT facilities in a beautiful, friendly and peaceful environment. PhD students have the dedicated Moramora Laboratory in the DWU Postgraduate and Research Centre in which to work.</p>
-                        </div>
-                        <div class='course-block course-admission'>
-                            <h2>Admission Requirements</h2>
-                            <p>Applicants will normally have completed a Master's degree, with an average grade of Distinction or higher. English writing skills are essential and applicants may be asked to demonstrate these before being accepted.</p>
-                        </div>
-                        <div class='course-block course-costs'>
-                            <h2>Costs</h2>
-                            <ul>
-                                <li>K100 non-refundable application fee.</li>
-                                <li>K10,000 per year for tuition, internet access when on campus and supervisory services for full-time students.</li>
-                                <li>K15,000 per year for part-time students.</li>
-                                <li>Current fee for on-campus accommodation and meals is K2800 per fortnight (K200 per day).</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class='course-sidebar'>
-                        <div class='course-block course-download'>
-                            <h2>Application Form</h2>
-                            <a href="{% url 'research:phd-apply' %}" class='btn-download'>Apply Now</a>
-                        </div>
-                        <div class='course-block course-program-info'>
-                            <h2>Program Information</h2>
-                            <ul>
-                                <li><strong>Program Name:</strong> Doctor of philosophy</li>
-                                <li><strong>Level:</strong> Postgraduate</li>
-                                <li><strong>Mode of study:</strong> Part time - 6 years | Fulltime - 4 years</li>
-                                <li><strong>Campus:</strong> Madang</li>
-                            </ul>
-                        </div>
-                        <div class='course-block course-account'>
-                            <h2>Account Details for Fee Payments</h2>
-                            <ul>
-                                <li><strong>Bank:</strong> BSP Madang</li>
-                                <li><strong>Branch No.:</strong> 960</li>
-                                <li><strong>Account No.:</strong> 1000 433 806</li>
-                                <li><strong>Account Name:</strong> Divine Word University</li>
-                            </ul>
-                        </div>
-                        <div class='course-block course-contact'>
-                            <h2>Contact</h2>
-                            <p>For application forms or information, contact:</p>
-                            <p><strong>The Executive Officer</strong><br>
-                            Post Graduate and Research Centre<br>
-                            Divine Word University<br>
-                            PO Box 483<br>
-                            Madang, 511, Papua New Guinea</p>
-                            <p><strong>Ph.</strong> (675) 422 1830 Ext: 830<br>
-                            <strong>Fax.</strong> (675) 422 1312<br>
-                            <strong>Email:</strong> <a href='mailto:pgrc@dwu.ac.pg'>pgrc@dwu.ac.pg</a></p>
+<div class='course-block application-form'>
+                            <h2>Application for Doctoral Program</h2>
+                            {% if messages %}
+                            <div class='dashboard-messages'>
+                                {% for message in messages %}
+                                <div class='alert alert-{{ message.tags|default:"info" }}'>{{ message }}</div>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                            <form method='post' action='' enctype='multipart/form-data'>
+                                {% csrf_token %}
 
-                            <p class='updated'>Updated April 2025</p>
+                                <h3>Section A: Personal Information</h3>
+                                <div class='form-row'>
+                                    <div class='form-group'>
+                                        <label for='phd-title'>Title</label>
+                                        <select id='phd-title' name='title'>
+                                            <option value=''>Select</option>
+                                            <option value='Mr'>Mr</option>
+                                            <option value='Mrs'>Mrs</option>
+                                            <option value='Ms'>Ms</option>
+                                            <option value='Dr'>Dr</option>
+                                            <option value='Prof'>Prof</option>
+                                        </select>
+                                    </div>
+                                    <div class='form-group'>
+                                        <label for='phd-first-name'>First Name <span class='required'>*</span></label>
+                                        <input type='text' id='phd-first-name' name='first_name' required>
+                                    </div>
+                                    <div class='form-group'>
+                                        <label for='phd-middle-name'>Middle Name</label>
+                                        <input type='text' id='phd-middle-name' name='middle_name'>
+                                    </div>
+                                    <div class='form-group'>
+                                        <label for='phd-surname'>Surname <span class='required'>*</span></label>
+                                        <input type='text' id='phd-surname' name='surname' required>
+                                    </div>
+                                </div>
+                                <div class='form-row'>
+                                    <div class='form-group'>
+                                        <label for='phd-previous-surname'>Previous Surname (if changed)</label>
+                                        <input type='text' id='phd-previous-surname' name='previous_surname'>
+                                    </div>
+                                    <div class='form-group'>
+                                        <label for='phd-dob'>Date of Birth <span class='required'>*</span></label>
+                                        <input type='date' id='phd-dob' name='date_of_birth' required>
+                                    </div>
+                                </div>
+                                <div class='form-row'>
+                                    <div class='form-group'>
+                                        <label for='phd-previously-enrolled'>Have you previously been enrolled at Divine Word University?</label>
+                                        <select id='phd-previously-enrolled' name='previously_enrolled'>
+                                            <option value=''>Select</option>
+                                            <option value='Yes'>Yes</option>
+                                            <option value='No'>No</option>
+                                        </select>
+                                    </div>
+                                    <div class='form-group'>
+                                        <label for='phd-student-id'>Previous Student ID Number (if yes)</label>
+                                        <input type='text' id='phd-student-id' name='previous_student_id'>
+                                    </div>
+                                </div>
+                                <div class='form-row'>
+                                    <div class='form-group'>
+                                        <label for='phd-nationality'>Nationality</label>
+                                        <input type='text' id='phd-nationality' name='nationality'>
+                                    </div>
+                                    <div class='form-group'>
+                                        <label for='phd-gender'>Gender</label>
+                                        <select id='phd-gender' name='gender'>
+                                            <option value=''>Select</option>
+                                            <option value='Male'>Male</option>
+                                            <option value='Female'>Female</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class='form-row'>
+                                    <div class='form-group'>
+                                        <label for='phd-home-province'>Home Province</label>
+                                        <input type='text' id='phd-home-province' name='home_province'>
+                                    </div>
+                                    <div class='form-group'>
+                                        <label for='phd-residence'>Expected Place of Residence During Study</label>
+                                        <input type='text' id='phd-residence' name='residence_during_study'>
+                                    </div>
+                                </div>
+                                <div class='form-group'>
+                                    <label for='phd-postal-address'>Postal Address <span class='required'>*</span></label>
+                                    <textarea id='phd-postal-address' name='postal_address' rows='3' required></textarea>
+                                </div>
+                                <div class='form-row'>
+                                    <div class='form-group'>
+                                        <label for='phd-email'>Email <span class='required'>*</span></label>
+                                        <input type='email' id='phd-email' name='email' required>
+                                    </div>
+                                    <div class='form-group'>
+                                        <label for='phd-work-email'>Work Email</label>
+                                        <input type='email' id='phd-work-email' name='work_email'>
+                                    </div>
+                                </div>
+                                <div class='form-row'>
+                                    <div class='form-group'>
+                                        <label for='phd-mobile'>Mobile Phone <span class='required'>*</span></label>
+                                        <input type='tel' id='phd-mobile' name='mobile_phone' required>
+                                    </div>
+                                    <div class='form-group'>
+                                        <label for='phd-phone-work'>Telephone (Work)</label>
+                                        <input type='tel' id='phd-phone-work' name='work_phone'>
+                                    </div>
+                                </div>
+                                <h3>Emergency Contact</h3>
+                                <div class='form-row'>
+                                    <div class='form-group'>
+                                        <label for='phd-emergency-name'>Name</label>
+                                        <input type='text' id='phd-emergency-name' name='emergency_name'>
+                                    </div>
+                                    <div class='form-group'>
+                                        <label for='phd-emergency-relationship'>Relationship</label>
+                                        <input type='text' id='phd-emergency-relationship' name='emergency_relationship'>
+                                    </div>
+                                </div>
+                                <div class='form-row'>
+                                    <div class='form-group'>
+                                        <label for='phd-emergency-mobile'>Mobile</label>
+                                        <input type='tel' id='phd-emergency-mobile' name='emergency_mobile'>
+                                    </div>
+                                    <div class='form-group'>
+                                        <label for='phd-emergency-email'>Email</label>
+                                        <input type='email' id='phd-emergency-email' name='emergency_email'>
+                                    </div>
+                                </div>
+
+                                <h3>Section B: Educational Qualifications</h3>
+                                <p class='form-note'>List qualifications most recent first.</p>
+                                <div class='form-row'>
+                                    <div class='form-group'>
+                                        <label for='phd-award'>Award (Certificate, Diploma, Degree) <span class='required'>*</span></label>
+                                        <input type='text' id='phd-award' name='award' required>
+                                    </div>
+                                    <div class='form-group'>
+                                        <label for='phd-specialization'>Specialization</label>
+                                        <input type='text' id='phd-specialization' name='specialization'>
+                                    </div>
+                                </div>
+                                <div class='form-row'>
+                                    <div class='form-group'>
+                                        <label for='phd-institution'>Institution and Location <span class='required'>*</span></label>
+                                        <input type='text' id='phd-institution' name='institution' required>
+                                    </div>
+                                    <div class='form-group'>
+                                        <label for='phd-year-start'>Year Started</label>
+                                        <input type='number' id='phd-year-start' name='year_started' min='1950' max='2030'>
+                                    </div>
+                                    <div class='form-group'>
+                                        <label for='phd-year-finish'>Year Completed</label>
+                                        <input type='number' id='phd-year-finish' name='year_completed' min='1950' max='2030'>
+                                    </div>
+                                </div>
+                                <div class='form-group'>
+                                    <label for='phd-other-qualifications'>Other Qualifications (if any)</label>
+                                    <textarea id='phd-other-qualifications' name='other_qualifications' rows='3' placeholder='List years, award, specialization, institution and location for each additional qualification'></textarea>
+                                </div>
+
+                                <h3>Section C: Employment History</h3>
+                                <div class='form-group'>
+                                    <label for='phd-employment-history'>Employment history (most recent first)</label>
+                                    <textarea id='phd-employment-history' name='employment_history' rows='5' placeholder='Dates, position, location and institution/company'></textarea>
+                                </div>
+
+                                <h3>Section D: Choice of Doctoral Program</h3>
+                                <div class='form-row'>
+                                    <div class='form-group'>
+                                        <label for='phd-program'>Doctoral Program <span class='required'>*</span></label>
+                                        <select id='phd-program' name='program' required>
+                                            <option value='PhD' selected>Doctor of Philosophy (PhD)</option>
+                                            <option value='EdD'>Doctor of Education (EdD)</option>
+                                        </select>
+                                    </div>
+                                    <div class='form-group'>
+                                        <label for='phd-study-mode'>I plan to study <span class='required'>*</span></label>
+                                        <select id='phd-study-mode' name='study_mode' required>
+                                            <option value=''>Select</option>
+                                            <option value='Full-time'>Full-time (4 years)</option>
+                                            <option value='Part-time'>Part-time (6 years)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class='form-group'>
+                                    <label for='phd-fee-method'>How will fees be paid? <span class='required'>*</span></label>
+                                    <select id='phd-fee-method' name='fee_payment_method' required>
+                                        <option value=''>Select</option>
+                                        <option value='Employer Sponsored'>Employer Sponsored</option>
+                                        <option value='Self-Sponsored'>Self-Sponsored</option>
+                                    </select>
+                                </div>
+                                <p class='form-note'>Note: There are clear advantages, even for part-time students, to devote some period of full-time study on campus at Madang during either data analysis and/or thesis chapter writing. If you intend to study part-time, please note that there are attendance requirements and email expectations for regular contact with your supervisor.</p>
+
+                                <h3>Section E: Proposed Research Proposal</h3>
+                                <div class='form-group'>
+                                    <label for='phd-research-topic'>Proposed Research Topic <span class='required'>*</span></label>
+                                    <input type='text' id='phd-research-topic' name='research_topic' required>
+                                </div>
+                                <div class='form-group'>
+                                    <label for='phd-research-outline'>Preliminary outline of your proposed research topic (approximately 2000 words) <span class='required'>*</span></label>
+                                    <textarea id='phd-research-outline' name='research_outline' rows='10' required placeholder='The issue/problem you wish to explore and the question to be answered by your research; why it is important and/or original; how, in broad terms, you propose to approach it'></textarea>
+                                </div>
+                                <div class='form-group'>
+                                    <label for='phd-previous-work'>Describe any previous work you have done in this area</label>
+                                    <textarea id='phd-previous-work' name='previous_work' rows='4' placeholder='Reference relevant papers you have written or literature that you have read'></textarea>
+                                </div>
+                                <div class='form-group'>
+                                    <label for='phd-equipment'>Equipment or travel requirements associated with your proposed work</label>
+                                    <textarea id='phd-equipment' name='equipment_travel' rows='3'></textarea>
+                                </div>
+                                <div class='form-group'>
+                                    <label for='phd-supervisor'>Briefly describe how you will be able to work with your supervisor</label>
+                                    <textarea id='phd-supervisor' name='supervisor_arrangement' rows='3'></textarea>
+                                </div>
+                                <div class='form-group'>
+                                    <label for='phd-disabilities'>Do you have any disabilities that might possibly impact upon your study? If yes, please specify</label>
+                                    <textarea id='phd-disabilities' name='disabilities' rows='2'></textarea>
+                                </div>
+
+                                <h3>Section F: Required Documents</h3>
+                                <p class='form-note'>Please ensure you have paid your K100 non-refundable application fee and attach a copy of the bank deposit receipt. Ensure your full name is written clearly on the receipt.<br>
+                                Bank: BSP Madang | Branch No: 960 | Account No: 1000 433 806 | Account Name: Divine Word University</p>
+                                <div class='form-group'>
+                                    <label for='phd-fee-receipt'>Receipt of non-refundable application fee of K100 <span class='required'>*</span></label>
+                                    <input type='file' id='phd-fee-receipt' name='fee_receipt' accept='.pdf,.jpg,.jpeg,.png' required>
+                                </div>
+                                <div class='form-group'>
+                                    <label for='phd-qualification-docs'>Certified copies of your master&rsquo;s degree and other academic certificates along with transcripts <span class='required'>*</span></label>
+                                    <input type='file' id='phd-qualification-docs' name='qualification_documents' accept='.pdf,.jpg,.jpeg,.png' multiple required>
+                                </div>
+                                <div class='form-group'>
+                                    <label for='phd-cv'>Most updated CV <span class='required'>*</span></label>
+                                    <input type='file' id='phd-cv' name='cv' accept='.pdf,.doc,.docx' required>
+                                </div>
+                                <div class='form-group'>
+                                    <label for='phd-references'>At least 2 professional references <span class='required'>*</span></label>
+                                    <input type='file' id='phd-references' name='professional_references' accept='.pdf,.jpg,.jpeg,.png,.doc,.docx' multiple required>
+                                </div>
+                                <p class='form-note'>Please ensure that all sections of the application form are correctly completed and that all required supporting documents are attached before submission. All documents must be compiled and submitted in PDF format only. Failure to do so will result in your application being considered incomplete.</p>
+
+                                <h3>Declaration by Applicant</h3>
+                                <div class='form-group form-checkbox'>
+                                    <label for='phd-declaration'>
+                                        <input type='checkbox' id='phd-declaration' name='declaration' required>
+                                        I declare that the above information is true and correct to the best of my knowledge and belief. <span class='required'>*</span>
+                                    </label>
+                                </div>
+                                <button type='submit' class='btn-submit'>Submit Application</button>
+                            </form>
                         </div>
                     </div>
-                </div>
             </div>
         </div>
-
-        <!-- Footer Section Start -->
+<!-- Footer Section Start -->
         <div class='section footer-section'>
             <div class='footer-copyright-area'>
                 <div class='container'>

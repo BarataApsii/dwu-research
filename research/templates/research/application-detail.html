@@ -1,0 +1,175 @@
+{% extends 'research/base.html' %}
+{% load static %}
+{% block title %}Application #{{ application.pk }} - DWU{% endblock %}
+{% block content %}
+        <!-- Page Banner -->
+        <div class='section page-banner-section'>
+            <img src="{% static 'research/images/banner.png' %}" alt='Application detail banner' class='banner-image'>
+            <div class='container'>
+                <div class='page-banner-content'>
+                    <h1>Application #{{ application.pk }}</h1>
+                    <p>{{ application.applicant_name }} &mdash; {{ application.get_program_display }}</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Application Detail -->
+        <div class='section section-padding dashboard-section'>
+            <div class='container'>
+
+                {% if messages %}
+                <div class='dashboard-messages'>
+                    {% for message in messages %}
+                    <div class='alert alert-{{ message.tags|default:"info" }}'>{{ message }}</div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                <a class='back-link' href="{% url 'research:coordinator-dashboard' %}">&larr; Back to dashboard</a>
+
+                <div class='detail-layout'>
+                    <div class='detail-main'>
+
+                        <div class='detail-card'>
+                            <h2>Personal Information</h2>
+                            <div class='detail-grid'>
+                                {% if application.title %}<div class='detail-item'><span>Title</span><strong>{{ application.title }}</strong></div>{% endif %}
+                                <div class='detail-item'><span>Name</span><strong>{{ application.applicant_name }}</strong></div>
+                                {% if application.previous_surname %}<div class='detail-item'><span>Previous Surname</span><strong>{{ application.previous_surname }}</strong></div>{% endif %}
+                                {% if application.date_of_birth %}<div class='detail-item'><span>Date of Birth</span><strong>{{ application.date_of_birth|date:'d M Y' }}</strong></div>{% endif %}
+                                {% if application.gender %}<div class='detail-item'><span>Gender</span><strong>{{ application.gender }}</strong></div>{% endif %}
+                                {% if application.nationality %}<div class='detail-item'><span>Nationality / Citizenship</span><strong>{{ application.nationality }}</strong></div>{% endif %}
+                                {% if application.place_of_birth %}<div class='detail-item'><span>Place of Birth</span><strong>{{ application.place_of_birth }}</strong></div>{% endif %}
+                                {% if application.home_province %}<div class='detail-item'><span>Home Province</span><strong>{{ application.home_province }}</strong></div>{% endif %}
+                                {% if application.residence_during_study %}<div class='detail-item'><span>Residence During Study</span><strong>{{ application.residence_during_study }}</strong></div>{% endif %}
+                                {% if application.previously_enrolled %}<div class='detail-item'><span>Previously Enrolled at DWU</span><strong>{{ application.previously_enrolled }}{% if application.previous_student_id %} (ID: {{ application.previous_student_id }}){% endif %}</strong></div>{% endif %}
+                                {% if application.disabilities %}<div class='detail-item detail-item-full'><span>Disabilities</span><strong>{{ application.disabilities }}</strong></div>{% endif %}
+                            </div>
+                        </div>
+
+                        <div class='detail-card'>
+                            <h2>Contact Details</h2>
+                            <div class='detail-grid'>
+                                <div class='detail-item'><span>Email</span><strong><a href='mailto:{{ application.email }}'>{{ application.email }}</a></strong></div>
+                                {% if application.work_email %}<div class='detail-item'><span>Work Email</span><strong><a href='mailto:{{ application.work_email }}'>{{ application.work_email }}</a></strong></div>{% endif %}
+                                {% if application.mobile_phone %}<div class='detail-item'><span>Mobile Phone</span><strong>{{ application.mobile_phone }}</strong></div>{% endif %}
+                                {% if application.work_phone %}<div class='detail-item'><span>Work Phone</span><strong>{{ application.work_phone }}</strong></div>{% endif %}
+                                {% if application.address %}<div class='detail-item detail-item-full'><span>Address</span><strong>{{ application.address|linebreaksbr }}</strong></div>{% endif %}
+                            </div>
+                        </div>
+
+                        {% if application.emergency_name or application.emergency_mobile or application.emergency_email %}
+                        <div class='detail-card'>
+                            <h2>Emergency Contact</h2>
+                            <div class='detail-grid'>
+                                {% if application.emergency_name %}<div class='detail-item'><span>Name</span><strong>{{ application.emergency_name }}</strong></div>{% endif %}
+                                {% if application.emergency_relationship %}<div class='detail-item'><span>Relationship</span><strong>{{ application.emergency_relationship }}</strong></div>{% endif %}
+                                {% if application.emergency_mobile %}<div class='detail-item'><span>Mobile</span><strong>{{ application.emergency_mobile }}</strong></div>{% endif %}
+                                {% if application.emergency_email %}<div class='detail-item'><span>Email</span><strong><a href='mailto:{{ application.emergency_email }}'>{{ application.emergency_email }}</a></strong></div>{% endif %}
+                            </div>
+                        </div>
+                        {% endif %}
+
+                        <div class='detail-card'>
+                            <h2>Educational Qualifications</h2>
+                            <div class='detail-grid'>
+                                {% if application.award %}<div class='detail-item'><span>Award</span><strong>{{ application.award }}</strong></div>{% endif %}
+                                {% if application.specialization %}<div class='detail-item'><span>Specialization</span><strong>{{ application.specialization }}</strong></div>{% endif %}
+                                {% if application.institution %}<div class='detail-item'><span>Institution</span><strong>{{ application.institution }}</strong></div>{% endif %}
+                                {% if application.year_started %}<div class='detail-item'><span>Year Started</span><strong>{{ application.year_started }}</strong></div>{% endif %}
+                                {% if application.year_completed %}<div class='detail-item'><span>Year Completed</span><strong>{{ application.year_completed }}</strong></div>{% endif %}
+                                {% if application.other_qualifications %}<div class='detail-item detail-item-full'><span>Other Qualifications</span><strong>{{ application.other_qualifications|linebreaksbr }}</strong></div>{% endif %}
+                            </div>
+                        </div>
+
+                        {% if application.work_experience %}
+                        <div class='detail-card'>
+                            <h2>Work Experience</h2>
+                            <p class='detail-text'>{{ application.work_experience|linebreaksbr }}</p>
+                        </div>
+                        {% endif %}
+
+                        <div class='detail-card'>
+                            <h2>Proposed Research</h2>
+                            <div class='detail-grid'>
+                                <div class='detail-item'><span>Program</span><strong>{{ application.get_program_display }}</strong></div>
+                                {% if application.study_mode %}<div class='detail-item'><span>Study Mode</span><strong>{{ application.study_mode }}</strong></div>{% endif %}
+                                {% if application.fee_payment_method %}<div class='detail-item'><span>Fee Payment Method</span><strong>{{ application.fee_payment_method }}</strong></div>{% endif %}
+                                {% if application.research_topic %}<div class='detail-item detail-item-full'><span>Research Topic</span><strong>{{ application.research_topic }}</strong></div>{% endif %}
+                            </div>
+                            {% if application.research_outline %}
+                            <h3 class='detail-subheading'>Research Outline</h3>
+                            <p class='detail-text'>{{ application.research_outline|linebreaksbr }}</p>
+                            {% endif %}
+                            {% if application.statement_of_purpose %}
+                            <h3 class='detail-subheading'>Statement of Purpose</h3>
+                            <p class='detail-text'>{{ application.statement_of_purpose|linebreaksbr }}</p>
+                            {% endif %}
+                            {% if application.previous_work %}
+                            <h3 class='detail-subheading'>Previous Work in this Area</h3>
+                            <p class='detail-text'>{{ application.previous_work|linebreaksbr }}</p>
+                            {% endif %}
+                            {% if application.equipment_travel %}
+                            <h3 class='detail-subheading'>Equipment / Travel Requirements</h3>
+                            <p class='detail-text'>{{ application.equipment_travel|linebreaksbr }}</p>
+                            {% endif %}
+                            {% if application.supervisor_arrangement %}
+                            <h3 class='detail-subheading'>Supervisor Arrangement</h3>
+                            <p class='detail-text'>{{ application.supervisor_arrangement|linebreaksbr }}</p>
+                            {% endif %}
+                        </div>
+
+                        <div class='detail-card'>
+                            <h2>Uploaded Documents</h2>
+                            {% if documents %}
+                            <ul class='document-list'>
+                                {% for document in documents %}
+                                <li>
+                                    <span class='document-category'>{{ document.get_category_display }}</span>
+                                    <a href='{{ document.file.url }}' target='_blank' rel='noopener'>{{ document.file.name|slice:'14:' }}</a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                            {% else %}
+                            <p class='detail-text'>No documents were uploaded with this application.</p>
+                            {% endif %}
+                        </div>
+
+                    </div>
+
+                    <aside class='detail-sidebar'>
+                        <div class='detail-card status-card'>
+                            <h2>Application Status</h2>
+                            <p><span class='status-badge status-{{ application.status }}'>{{ application.get_status_display }}</span></p>
+                            <form method='post' action=''>
+                                {% csrf_token %}
+                                <div class='form-group'>
+                                    <label for='status'>Update status</label>
+                                    <select id='status' name='status'>
+                                        {% for value, label in status_choices %}
+                                        <option value='{{ value }}' {% if value == application.status %}selected{% endif %}>{{ label }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class='form-group'>
+                                    <label for='coordinator_notes'>Coordinator notes</label>
+                                    <textarea id='coordinator_notes' name='coordinator_notes' rows='5' placeholder='Internal notes about this application'>{{ application.coordinator_notes }}</textarea>
+                                </div>
+                                <button type='submit' class='btn-submit'>Save Changes</button>
+                            </form>
+                        </div>
+
+                        <div class='detail-card'>
+                            <h2>Submission Info</h2>
+                            <div class='detail-grid'>
+                                <div class='detail-item detail-item-full'><span>Submitted</span><strong>{{ application.submitted_at|date:'d M Y, H:i' }}</strong></div>
+                                <div class='detail-item detail-item-full'><span>Last Updated</span><strong>{{ application.updated_at|date:'d M Y, H:i' }}</strong></div>
+                                <div class='detail-item detail-item-full'><span>Declaration Signed</span><strong>{% if application.declaration %}Yes{% else %}No{% endif %}</strong></div>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+
+            </div>
+        </div>
+{% endblock %}

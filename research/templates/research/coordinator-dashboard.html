@@ -1,0 +1,147 @@
+{% extends 'research/base.html' %}
+{% load static %}
+{% block title %}Coordinator Dashboard - DWU{% endblock %}
+{% block content %}
+        <!-- Page Banner -->
+        <div class='section page-banner-section'>
+            <img src="{% static 'research/images/banner.png' %}" alt='Coordinator dashboard banner' class='banner-image'>
+            <div class='container'>
+                <div class='page-banner-content'>
+                    <h1>Coordinator Dashboard</h1>
+                    <p>DWU Postgraduate &amp; Research Centre</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dashboard -->
+        <div class='section section-padding dashboard-section'>
+            <div class='container'>
+
+                {% if messages %}
+                <div class='dashboard-messages'>
+                    {% for message in messages %}
+                    <div class='alert alert-{{ message.tags|default:"info" }}'>{{ message }}</div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                <!-- Summary stats -->
+                <div class='dashboard-stats'>
+                    <a class='stat-card' href="{% url 'research:coordinator-dashboard' %}">
+                        <span class='stat-number'>{{ total_count }}</span>
+                        <span class='stat-label'>Total Applications</span>
+                    </a>
+                    <a class='stat-card stat-submitted' href="?status=submitted">
+                        <span class='stat-number'>{{ status_counts.submitted|default:0 }}</span>
+                        <span class='stat-label'>New / Submitted</span>
+                    </a>
+                    <a class='stat-card stat-under-review' href="?status=under_review">
+                        <span class='stat-number'>{{ status_counts.under_review|default:0 }}</span>
+                        <span class='stat-label'>Under Review</span>
+                    </a>
+                    <a class='stat-card stat-approved' href="?status=approved">
+                        <span class='stat-number'>{{ status_counts.approved|default:0 }}</span>
+                        <span class='stat-label'>Approved</span>
+                    </a>
+                    <a class='stat-card stat-rejected' href="?status=rejected">
+                        <span class='stat-number'>{{ status_counts.rejected|default:0 }}</span>
+                        <span class='stat-label'>Rejected</span>
+                    </a>
+                </div>
+
+                <!-- Program breakdown -->
+                <div class='program-stats'>
+                    <div class='program-stat'><span>PhD</span><strong>{{ program_counts.phd|default:0 }}</strong></div>
+                    <div class='program-stat'><span>EdD</span><strong>{{ program_counts.edd|default:0 }}</strong></div>
+                    <div class='program-stat'><span>MPhil</span><strong>{{ program_counts.mphil|default:0 }}</strong></div>
+                    <div class='program-stat'><span>MRM</span><strong>{{ program_counts.mrm|default:0 }}</strong></div>
+                </div>
+
+                <!-- Filters -->
+                <form class='dashboard-filters' method='get' action="{% url 'research:coordinator-dashboard' %}">
+                    <div class='filter-group filter-search'>
+                        <label for='filter-q'>Search</label>
+                        <input type='text' id='filter-q' name='q' value='{{ query }}' placeholder='Name, email or research topic'>
+                    </div>
+                    <div class='filter-group'>
+                        <label for='filter-program'>Program</label>
+                        <select id='filter-program' name='program'>
+                            <option value=''>All programs</option>
+                            {% for value, label in program_choices %}
+                            <option value='{{ value }}' {% if value == selected_program %}selected{% endif %}>{{ label }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class='filter-group'>
+                        <label for='filter-status'>Status</label>
+                        <select id='filter-status' name='status'>
+                            <option value=''>All statuses</option>
+                            {% for value, label in status_choices %}
+                            <option value='{{ value }}' {% if value == selected_status %}selected{% endif %}>{{ label }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class='filter-actions'>
+                        <button type='submit' class='btn-submit'>Filter</button>
+                        <a class='filter-clear' href="{% url 'research:coordinator-dashboard' %}">Clear</a>
+                    </div>
+                </form>
+
+                <!-- Applications table -->
+                {% if applications %}
+                <div class='table-responsive'>
+                    <table class='applications-table'>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Applicant</th>
+                                <th>Program</th>
+                                <th>Study Mode</th>
+                                <th>Email</th>
+                                <th>Submitted</th>
+                                <th>Status</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for application in applications %}
+                            <tr>
+                                <td>{{ application.pk }}</td>
+                                <td>
+                                    <a href="{% url 'research:application-detail' application.pk %}" class='applicant-name'>{{ application.applicant_name }}</a>
+                                    {% if application.research_topic %}<span class='applicant-topic'>{{ application.research_topic|truncatechars:60 }}</span>{% endif %}
+                                </td>
+                                <td>{{ application.get_program_display }}</td>
+                                <td>{{ application.study_mode|default:'—' }}</td>
+                                <td><a href='mailto:{{ application.email }}'>{{ application.email }}</a></td>
+                                <td>{{ application.submitted_at|date:'d M Y, H:i' }}</td>
+                                <td><span class='status-badge status-{{ application.status }}'>{{ application.get_status_display }}</span></td>
+                                <td><a class='btn-view' href="{% url 'research:application-detail' application.pk %}">View</a></td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+                {% if page_obj.has_other_pages %}
+                <nav class='dashboard-pagination' aria-label='Applications pagination'>
+                    {% if page_obj.has_previous %}
+                    <a href="?q={{ query }}&program={{ selected_program }}&status={{ selected_status }}&page={{ page_obj.previous_page_number }}">&larr; Previous</a>
+                    {% endif %}
+                    <span>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+                    {% if page_obj.has_next %}
+                    <a href="?q={{ query }}&program={{ selected_program }}&status={{ selected_status }}&page={{ page_obj.next_page_number }}">Next &rarr;</a>
+                    {% endif %}
+                </nav>
+                {% endif %}
+
+                {% else %}
+                <div class='dashboard-empty'>
+                    <h3>No applications found</h3>
+                    <p>{% if query or selected_program or selected_status %}Try adjusting your filters or <a href="{% url 'research:coordinator-dashboard' %}">clearing them</a>.{% else %}Applications submitted through the program application forms will appear here.{% endif %}</p>
+                </div>
+                {% endif %}
+
+            </div>
+        </div>
+{% endblock %}
