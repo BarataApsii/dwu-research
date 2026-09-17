@@ -11,7 +11,6 @@
     <link rel='shortcut icon' type='image/x-icon' href="{% static 'research/images/logo.png' %}">
 
     <link href='https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap' rel='stylesheet'>
-    <link rel='stylesheet' href="{% static 'research/css/research.css' %}">
     <link rel='stylesheet' href="{% static 'research/css/new-research.css' %}">
 </head>
 <body>
@@ -566,11 +565,7 @@
                     <div class='course-sidebar'>
                         <div class='course-block course-download'>
                             <h2>Application Form</h2>
-                            <a href='Docs/DWU_MPhil%20Application%20Form%20250425.pdf' class='btn-download' download>Download</a>
-                        </div>
-                        <div class='course-block course-info-sheet'>
-                            <h2>Course Information Sheet</h2>
-                            <a href='Docs/MPhil%20Course%20Information%20Sheet%20250425.pdf' class='btn-download' download>Download</a>
+                            <a href="{% url 'research:mphil-apply' %}" class='btn-download'>Apply Now</a>
                         </div>
                         <div class='course-block course-program-info'>
                             <h2>Program Information</h2>

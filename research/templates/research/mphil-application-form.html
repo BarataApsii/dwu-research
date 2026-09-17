@@ -4,9 +4,9 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='x-ua-compatible' content='ie=edge'>
-    <title>Doctor of Education (EdD) - DWU</title>
+    <title>MPhil Application Form - DWU</title>
     <meta name='robots' content='noindex, follow'>
-    <meta name='description' content='Study the Doctor of Education (EdD) at Divine Word University and develop advanced research and leadership skills in education.'>
+    <meta name='description' content='Apply for the Master of Philosophy (MPhil) program at Divine Word University and undertake supervised research culminating in an externally examined thesis.'>
     <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
     <link rel='shortcut icon' type='image/x-icon' href="{% static 'research/images/logo.png' %}">
 
@@ -519,111 +519,192 @@
                 <!-- Header Bottom End Here -->
             </div>
 
-                <!-- Page Banner -->
+        <!-- Page Banner -->
         <div class='section page-banner-section'>
-            <img src="{% static 'research/images/banner.png' %}" alt="Doctor of Education banner" class='banner-image'>
+            <img src="{% static 'research/images/banner.png' %}" alt="Master of Philosophy banner" class='banner-image'>
             <div class='container'>
                 <div class='page-banner-content'>
-                    <h1>Doctor of Education (EdD)</h1>
+                    <h1>Master of Philosophy (MPhil)</h1>
                     <p>DWU Postgraduate & Research Centre</p>
                 </div>
             </div>
         </div>
 
-        <!-- EdD Course Information -->
-        <div class='section phd-course-section'>
+                <!-- MPhil Application Form -->
+        <div class='section application-section'>
             <div class='container'>
-                <div class='course-layout'>
-                    <div class='course-main'>
-                        <div class='course-block course-overview'>
-                            <h2>Program Overview</h2>
-                            <p>The Doctor of Education (EdD) is a program of research and advanced study which enables the candidate to make a significant contribution to knowledge and practice in their professional context. The candidate may also contribute more generally to scholarship within a discipline or field of study. The EdD is an award different from, but complementary to, the Doctor of Philosophy (PhD). The EdD is recommended for those who wish to study and research in areas associated with their professional life in education.</p>
-                        </div>
+<div class='course-block application-form'>
+                            <h2>Master of Philosophy (MPhil) Application Form</h2>
+                            <form method='post' action='' enctype='multipart/form-data'>
+                                {% csrf_token %}
 
-                        <div class='course-block course-admission'>
-                            <h2>Admission Requirements</h2>
-                            <p>Candidates must possess a minimum of a Master&apos;s degree from a recognised institution, with demonstrated research skills and relevant research experience.</p>
-                        </div>
+                                <h3>Personal Details</h3>
+                                <div class='form-row'>
+                                    <div class='form-group'>
+                                        <label for='mphil-first-name'>First Name <span class='required'>*</span></label>
+                                        <input type='text' id='mphil-first-name' name='first_name' required>
+                                    </div>
+                                    <div class='form-group'>
+                                        <label for='mphil-middle-name'>Middle Name</label>
+                                        <input type='text' id='mphil-middle-name' name='middle_name'>
+                                    </div>
+                                    <div class='form-group'>
+                                        <label for='mphil-surname'>Surname <span class='required'>*</span></label>
+                                        <input type='text' id='mphil-surname' name='surname' required>
+                                    </div>
+                                </div>
+                                <div class='form-row'>
+                                    <div class='form-group'>
+                                        <label for='mphil-previous-surname'>Previous Surname (if changed)</label>
+                                        <input type='text' id='mphil-previous-surname' name='previous_surname'>
+                                    </div>
+                                    <div class='form-group'>
+                                        <label for='mphil-dob'>Date of Birth <span class='required'>*</span></label>
+                                        <input type='date' id='mphil-dob' name='date_of_birth' required>
+                                    </div>
+                                </div>
+                                <div class='form-row'>
+                                    <div class='form-group'>
+                                        <label for='mphil-gender'>Gender</label>
+                                        <select id='mphil-gender' name='gender'>
+                                            <option value=''>Select</option>
+                                            <option value='Male'>Male</option>
+                                            <option value='Female'>Female</option>
+                                            <option value='Other'>Other</option>
+                                        </select>
+                                    </div>
+                                    <div class='form-group'>
+                                        <label for='mphil-place-of-birth'>Place of Birth</label>
+                                        <input type='text' id='mphil-place-of-birth' name='place_of_birth'>
+                                    </div>
+                                </div>
+                                <div class='form-row'>
+                                    <div class='form-group'>
+                                        <label for='mphil-citizenship'>Country of Citizenship</label>
+                                        <input type='text' id='mphil-citizenship' name='country_of_citizenship'>
+                                    </div>
+                                    <div class='form-group'>
+                                        <label for='mphil-residence'>Expected Place of Residence During Study</label>
+                                        <input type='text' id='mphil-residence' name='residence_during_study'>
+                                    </div>
+                                </div>
+                                <div class='form-group'>
+                                    <label for='mphil-disabilities'>Do you have any disabilities that might impact upon your study? If yes, please specify</label>
+                                    <textarea id='mphil-disabilities' name='disabilities' rows='2'></textarea>
+                                </div>
 
-                        <div class='course-block course-units'>
-                            <h2>Description of Units</h2>
-                            <p>Candidates NOT continuing to thesis units may exit with a Graduate Certificate in Educational Research if they successfully complete ED801, ED802 and ED803. Candidates gaining Credit grades or better in these units are eligible to proceed to thesis units.</p>
-                            <h3>Unit 1: ED801 Identifying the Research Problem (Year 1, Semester 1)</h3>
-                            <p>This unit aims to assist candidates to clarify their research problem by analyzing the context from which it is derived and by doing an initial search of relevant core literature to identify conceptual issues which illuminate and amplify the problem.</p>
-                            <h3>Unit 2: ED802 Crafting the Literature Review (Year 1, Semester 2)</h3>
-                            <p>This unit aims to assist candidates to master the skills of searching for relevant key research literature that will inform their research topics, critique and select those that are significant, are generally published in reputable databases, and widen the study problem.</p>
-                            <h3>Unit 3: ED803 Designing the Research Study (Year 2, Semester 3)</h3>
-                            <p>In the designing the research study unit the candidates acquire different research paradigms and perspectives, research methodologies or approaches and their methods of data gathering strategies, sources of data, data gatherings tools and forms of data analysis techniques.</p>
-                            <h3>Unit 4: ED804 Thesis Work 1 (Year 2-3, Semesters 4-6)</h3>
-                            <p><strong>Semester 4:</strong> This unit is to complete a research proposal based on the work done in units ED801, ED802 and ED803, submit an ethics clearance application form to the University Research Ethics Committee (UREC), gain approval and, confirmation seminar presentation for candidature to proceed with data collection. A candidate is expected to consider UREC feedback and amend planned activities as necessary.</p>
-                            <p><strong>Semesters 5 &amp; 6:</strong> The unit is the period for field data collection, anticipated to take 6 months. Data is recorded and iteratively analysed. Candidate on data display, analysis and interpretation procedures as well as use of suitable software.</p>
-                            <h3>Unit 5: ED805 Thesis Work 2 (Year 4, Semesters 7 &amp; 8)</h3>
-                            <p>This unit focuses on writing the thesis results chapter. Candidates develop outlines, organise key themes, prepare draft sections, and refine their work through regular feedback from principal and co-supervisors. The process strengthens academic writing, critical analysis, and presentation of research findings in a clear and structured manner.</p>
-                            <h3>Unit 6: ED806 Thesis Work 3 (Year 5 &amp; 6, Semesters 9-12)</h3>
-                            <p>In this unit, candidates critically interpret research findings through relevant theories and reviewed literature while developing a compelling discussion chapter. They also craft the concluding chapter, addressing the research questions and problem statement. Candidates finalise the thesis by proofreading, verifying references, preparing preliminary pages, and delivering a pre-completion seminar six months before examination submission.</p>
+                                <h3>Contact Details</h3>
+                                <div class='form-group'>
+                                    <label for='mphil-mailing-address'>Mailing Address <span class='required'>*</span></label>
+                                    <textarea id='mphil-mailing-address' name='mailing_address' rows='3' required></textarea>
+                                </div>
+                                <div class='form-row'>
+                                    <div class='form-group'>
+                                        <label for='mphil-email'>Email Address <span class='required'>*</span></label>
+                                        <input type='email' id='mphil-email' name='email' required>
+                                    </div>
+                                    <div class='form-group'>
+                                        <label for='mphil-work-email'>Work Email</label>
+                                        <input type='email' id='mphil-work-email' name='work_email'>
+                                    </div>
+                                </div>
+                                <div class='form-row'>
+                                    <div class='form-group'>
+                                        <label for='mphil-mobile'>Mobile Phone <span class='required'>*</span></label>
+                                        <input type='tel' id='mphil-mobile' name='mobile_phone' required>
+                                    </div>
+                                    <div class='form-group'>
+                                        <label for='mphil-phone-work'>Telephone (Work)</label>
+                                        <input type='tel' id='mphil-phone-work' name='work_phone'>
+                                    </div>
+                                </div>
+
+                                <h3>Educational Qualifications</h3>
+                                <div class='form-row'>
+                                    <div class='form-group'>
+                                        <label for='mphil-award'>Award (Certificate, Diploma, Degree) <span class='required'>*</span></label>
+                                        <input type='text' id='mphil-award' name='award' required>
+                                    </div>
+                                    <div class='form-group'>
+                                        <label for='mphil-specialization'>Specialization</label>
+                                        <input type='text' id='mphil-specialization' name='specialization'>
+                                    </div>
+                                </div>
+                                <div class='form-row'>
+                                    <div class='form-group'>
+                                        <label for='mphil-institution'>Institution and Location <span class='required'>*</span></label>
+                                        <input type='text' id='mphil-institution' name='institution' required>
+                                    </div>
+                                    <div class='form-group'>
+                                        <label for='mphil-year-start'>Year Started</label>
+                                        <input type='number' id='mphil-year-start' name='year_started' min='1950' max='2030'>
+                                    </div>
+                                    <div class='form-group'>
+                                        <label for='mphil-year-finish'>Year Completed</label>
+                                        <input type='number' id='mphil-year-finish' name='year_completed' min='1950' max='2030'>
+                                    </div>
+                                </div>
+                                <div class='form-group'>
+                                    <label for='mphil-other-qualifications'>Other Qualifications (if any)</label>
+                                    <textarea id='mphil-other-qualifications' name='other_qualifications' rows='3' placeholder='List award, institution and years for each additional qualification'></textarea>
+                                </div>
+                                <div class='form-group'>
+                                    <label for='mphil-qualification-docs'>Attach a photocopy of your Master, Postgraduate Diploma or Bachelor with Honours Degree award and transcript showing the results <span class='required'>*</span></label>
+                                    <input type='file' id='mphil-qualification-docs' name='qualification_documents' accept='.pdf,.jpg,.jpeg,.png' multiple required>
+                                </div>
+
+                                <h3>Work Experience</h3>
+                                <div class='form-group'>
+                                    <label for='mphil-work-experience'>Work experience in recent years (most recent first)</label>
+                                    <textarea id='mphil-work-experience' name='work_experience' rows='4' placeholder='Dates, position, location and kind of work'></textarea>
+                                </div>
+
+                                <h3>Proposed Research</h3>
+                                <div class='form-group'>
+                                    <label for='mphil-study-mode'>Do you plan to study full-time or part-time? <span class='required'>*</span></label>
+                                    <select id='mphil-study-mode' name='study_mode' required>
+                                        <option value=''>Select</option>
+                                        <option value='Full-time'>Full-time (maximum 2 years)</option>
+                                        <option value='Part-time'>Part-time (maximum 3 years)</option>
+                                    </select>
+                                </div>
+                                <p class='form-note'>Note: There are clear advantages, even for part-time students, to devote some period of full-time study on campus at Madang during either data analysis and/or thesis chapter writing. If you intend to study part-time, please note that there are attendance requirements and email expectations for regular contact with your supervisor.</p>
+                                <div class='form-group'>
+                                    <label for='mphil-research-outline'>Preliminary outline of your proposed research topic (1500 - 2000 words) <span class='required'>*</span></label>
+                                    <textarea id='mphil-research-outline' name='research_outline' rows='8' required placeholder='The issue/problem you wish to explore and the question to be answered; why it is important and/or original; how, in broad terms, you propose to approach it'></textarea>
+                                </div>
+                                <div class='form-group'>
+                                    <label for='mphil-previous-work'>Describe any previous work you have done in this area</label>
+                                    <textarea id='mphil-previous-work' name='previous_work' rows='4' placeholder='Reference relevant papers you have written or literature that you have read'></textarea>
+                                </div>
+                                <div class='form-group'>
+                                    <label for='mphil-equipment'>Equipment or travel requirements associated with your proposed work</label>
+                                    <textarea id='mphil-equipment' name='equipment_travel' rows='3'></textarea>
+                                </div>
+                                <div class='form-group'>
+                                    <label for='mphil-supervisor'>Briefly describe how you will be able to work with your supervisor</label>
+                                    <textarea id='mphil-supervisor' name='supervisor_arrangement' rows='3'></textarea>
+                                </div>
+
+                                <h3>Declaration</h3>
+                                <div class='form-group form-checkbox'>
+                                    <label for='mphil-declaration'>
+                                        <input type='checkbox' id='mphil-declaration' name='declaration' required>
+                                        I declare that the above information is true and correct to the best of my knowledge and belief. <span class='required'>*</span>
+                                    </label>
+                                </div>
+                                <p class='form-note'>A K100 non-refundable application fee applies to all new applications.</p>
+                                <div class='form-group'>
+                                    <label for='mphil-fee-payment'>Upload a screenshot of your K100 application fee payment receipt (image file) <span class='required'>*</span></label>
+                                    <input type='file' id='mphil-fee-payment' name='fee_payment' accept='image/*' required>
+                                </div>
+                                <button type='submit' class='btn-submit'>Submit Application</button>
+                            </form>
                         </div>
                     </div>
-                    <div class='course-sidebar'>
-
-                        <div class='course-block course-purpose'>
-                            <h2>Program Outcomes</h2>
-                            <p>Graduates of the Doctorate Program will be equipped to assume advanced professional and leadership roles, including:</p>
-                            <ul>
-                                <li>Senior Educational Researchers</li>
-                                <li>Educational Leaders and Policy Influencers</li>
-                                <li>Specialist Education Consultants</li>
-                                <li>University Academics and Lecturers</li>
-                                <li>Curriculum and Policy Development Specialists</li>
-                            </ul>
-                            <p>These outcomes prepare graduates to lead high-level research, influence educational policy and reform, drive institutional improvement, and contribute significantly to the advancement of education nationally and internationally.</p>
-                        </div>
-                        <div class='course-block course-costs'>
-                            <h2>Program Details</h2>
-                            <ul>
-                                <li><strong>Tuition Fees:</strong> K5,000 per semester</li>
-                                <li><strong>Boarding and Lodging:</strong> Additional costs apply (please consult Student Services for details)</li>
-                                <li><strong>Program Duration:</strong> 4 years (Full-time) / 6-8 years (Part-time)</li>
-                                <li><strong>Program Level:</strong> Doctoral Program</li>
-                                <li><strong>Scholarships:</strong> Candidates may be self-sponsored or receive financial support through government scholarships, NGOs, donor agencies, and corporate sponsors</li>
-                            </ul>
-                        </div>
-                        <div class='course-block course-program-info'>
-                            <h2>Program Information</h2>
-                            <ul>
-                                <li><strong>Program Name:</strong> Doctor of Education</li>
-                                <li><strong>Level:</strong> Postgraduate</li>
-                                <li><strong>Mode of study:</strong> Part time - 6 years | Fulltime - 4 years</li>
-                                <li><strong>Campus:</strong> Madang</li>
-                            </ul>
-                        </div>
-                        <div class='course-block course-account'>
-                            <h2>Account Details for Fee Payments</h2>
-                            <ul>
-                                <li><strong>Bank:</strong> BSP Madang</li>
-                                <li><strong>Branch No.:</strong> 960</li>
-                                <li><strong>Account No.:</strong> 1000 433 578</li>
-                                <li><strong>Account Name:</strong> TDEC / DWU</li>
-                            </ul>
-                        </div>
-                        <div class='course-block course-contact'>
-                            <h2>Contact</h2>
-                            <p>For application forms or information, contact:</p>
-                            <p><strong>The Post Graduate and Research Centre</strong><br>
-                            Divine Word University<br>
-                            PO Box 483<br>
-                            Madang, 511, Papua New Guinea</p>
-                            <p><strong>Ph.</strong> (675) 424 1830 Ext: 830<br>
-                            <strong>Fax.</strong> (675) 422 1312<br>
-                            <strong>Email:</strong> <a href='mailto:pgrc@dwu.ac.pg'>pgrc@dwu.ac.pg</a></p>
-
-                            <p class='updated'>Updated April 2024</p>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
-
-        <!-- Footer Section Start -->
+<!-- Footer Section Start -->
         <div class='section footer-section'>
             <div class='footer-copyright-area'>
                 <div class='container'>

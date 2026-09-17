@@ -10,5 +10,6 @@ urlpatterns = [
     path('master-of-philosophy/', views.master_of_philosophy, name='master-of-philosophy'),
     path('master-of-research-methodology/', views.master_of_research_methodology, name='master-of-research-methodology'),
     path('master-of-research-methodology/apply/', views.mrm_application_form, name='mrm-apply'),
+    path('master-of-philosophy/apply/', views.mphil_application_form, name='mphil-apply'),
     path('doctor-of-education/', views.doctor_of_education, name='doctor-of-education'),
 ]

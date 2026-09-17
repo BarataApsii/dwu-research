@@ -21,5 +21,9 @@ def mrm_application_form(request):
     return render(request, 'research/mrm-application-form.html')
 
 
+def mphil_application_form(request):
+    return render(request, 'research/mphil-application-form.html')
+
+
 def doctor_of_education(request):
     return render(request, 'research/doctor-of-education.html')
