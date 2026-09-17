@@ -4,7 +4,7 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='x-ua-compatible' content='ie=edge'>
-    <title>Master in Research Methodology (MRM) - DWU</title>
+    <title>MRM Application Form - DWU</title>
     <meta name='robots' content='noindex, follow'>
     <meta name='description' content='Study the Master in Research Methodology at Divine Word University through blended learning and develop practical research skills across disciplines.'>
     <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
@@ -48,7 +48,6 @@
                             <!-- Header Social Wrap End  -->
                         </div>
                     </div>
-                    
                 </div>
                 <!-- Header Bottom Start Here -->
                 <div id="header" class="header-bottom-section">
@@ -529,129 +528,100 @@
                     <h1>Master in Research Methodology (MRM)</h1>
                     <p>DWU Postgraduate & Research Centre</p>
                 </div>
-
             </div>
-
         </div>
 
-        <!-- MRM Course Information -->
-        <div class='section phd-course-section'>
+                <!-- MRM Application Form -->
+        <div class='section application-section'>
             <div class='container'>
-                <div class='course-layout'>
-                    <div class='course-main'>
-                        <div class='course-block course-overview'>
-                            <h2>Program Overview</h2>
-                            <p>The Master in Research Methodology (MRM) program specializes in research paradigms, methodologies and methods that are relevant across all disciplines. The student's choice of a research problem to investigate influences the Faculty under which they are enrolled.</p>
-                            <p>The MRM program is offered in blended learning mode. Students take two units a semester and complete the program in two and a half or three years. Students are required to participate in a one-week residential component per unit in each semester and are expected to have their own personal laptop and reliable internet connectivity.</p>
-                            <p>An optional Week O is offered for all new intakes in Semester 1. It covers registration, orientation, ICT skills, Moodle training, academic writing, APA referencing and library skills to prepare students for their academic studies.</p>
+<div class='course-block application-form'>
+                            <h2>Master of Research Methodology (MRM) Application Form</h2>
+                            <form method='post' action=''>
+                                {% csrf_token %}
+                                <div class='form-row'>
+                                    <div class='form-group'>
+                                        <label for='mrm-title'>Title</label>
+                                        <select id='mrm-title' name='title'>
+                                            <option value=''>Select</option>
+                                            <option value='Mr'>Mr</option>
+                                            <option value='Mrs'>Mrs</option>
+                                            <option value='Ms'>Ms</option>
+                                            <option value='Dr'>Dr</option>
+                                        </select>
+                                    </div>
+                                    <div class='form-group'>
+                                        <label for='mrm-full-name'>Full Name</label>
+                                        <input type='text' id='mrm-full-name' name='full_name' required>
+                                    </div>
+                                </div>
+                                <div class='form-row'>
+                                    <div class='form-group'>
+                                        <label for='mrm-dob'>Date of Birth</label>
+                                        <input type='date' id='mrm-dob' name='date_of_birth'>
+                                    </div>
+                                    <div class='form-group'>
+                                        <label for='mrm-gender'>Gender</label>
+                                        <select id='mrm-gender' name='gender'>
+                                            <option value=''>Select</option>
+                                            <option value='Male'>Male</option>
+                                            <option value='Female'>Female</option>
+                                            <option value='Other'>Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class='form-row'>
+                                    <div class='form-group'>
+                                        <label for='mrm-email'>Email</label>
+                                        <input type='email' id='mrm-email' name='email' required>
+                                    </div>
+                                    <div class='form-group'>
+                                        <label for='mrm-phone'>Phone</label>
+                                        <input type='tel' id='mrm-phone' name='phone' required>
+                                    </div>
+                                </div>
+                                <div class='form-group'>
+                                    <label for='mrm-address'>Address</label>
+                                    <textarea id='mrm-address' name='address' rows='3'></textarea>
+                                </div>
+                                <div class='form-row'>
+                                    <div class='form-group'>
+                                        <label for='mrm-highest-qualification'>Highest Qualification</label>
+                                        <input type='text' id='mrm-highest-qualification' name='highest_qualification' required>
+                                    </div>
+                                    <div class='form-group'>
+                                        <label for='mrm-institution'>Institution</label>
+                                        <input type='text' id='mrm-institution' name='institution' required>
+                                    </div>
+                                </div>
+                                <div class='form-row'>
+                                    <div class='form-group'>
+                                        <label for='mrm-year'>Year Completed</label>
+                                        <input type='number' id='mrm-year' name='year_completed' min='1950' max='2030'>
+                                    </div>
+                                    <div class='form-group'>
+                                        <label for='mrm-study-mode'>Mode of Study</label>
+                                        <select id='mrm-study-mode' name='study_mode'>
+                                            <option value='Flexible Blended' selected>Flexible Blended</option>
+                                            <option value='Full-time'>Full-time</option>
+                                            <option value='Part-time'>Part-time</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class='form-group'>
+                                    <label for='mrm-research-topic'>Proposed Research Topic</label>
+                                    <input type='text' id='mrm-research-topic' name='research_topic'>
+                                </div>
+                                <div class='form-group'>
+                                    <label for='mrm-statement'>Statement of Purpose</label>
+                                    <textarea id='mrm-statement' name='statement_of_purpose' rows='5'></textarea>
+                                </div>
+                                <button type='submit' class='btn-submit'>Submit Application</button>
+                            </form>
                         </div>
-                        <div class='course-block course-purpose'>
-                            <h2>Purpose</h2>
-                            <p>The MRM Program aims to produce graduates capable of undertaking research using appropriate research methods. The skills gained are ideal for students wishing to pursue doctoral studies at a later date.</p>
-                        </div>
-                        <div class='course-block course-facilities'>
-                            <h2>Facilities</h2>
-                            <p>Divine Word University offers excellent, modern, residential, teaching and ICT facilities in a beautiful, friendly and peaceful environment.</p>
-                        </div>
-                        <div class='course-block course-admission'>
-                            <h2>Admission Requirements</h2>
-                            <p>Applicants must normally hold a Bachelor's degree with an average grade of Credit or higher. English writing skills are essential and applicants may also be asked to demonstrate their English writing skills before being accepted.</p>
-                        </div>
-                        <div class='course-block course-costs'>
-                            <h2>Costs</h2>
-                            <ul>
-                                <li>K100 non-refundable application fee.</li>
-                                <li>K3,500 per unit per semester for tuition, internet access when on campus and supervisory services. A semester comprises two to three units.</li>
-                                <li>Current fee for on-campus accommodation and meals is K2,800 per fortnight (K200 per day).</li>
-                                <li>An additional fee of K1,400 is charged for Week O. Travel, accommodation and meals are additional.</li>
-                                <li>An extra fee of K20 per student is charged for each airport shuttle.</li>
-                            </ul>
-                        </div>
-                        
                     </div>
-                    <div class='course-sidebar'>
-                        <div class='course-block course-download'>
-                            <h2>Application Form</h2>
-                            <a href="{% url 'research:mrm-apply' %}" class='btn-download'>Apply Now</a>
-                        </div>
-                        <div class='course-block course-program-info'>
-                            <h2>Program Information</h2>
-                            <ul>
-                                <li><strong>Program Name:</strong> master of research methodology (MRM)</li>
-                                <li><strong>Level:</strong> Postgraduate</li>
-                                <li><strong>Mode of study:</strong> Flexible Blended</li>
-                                <li><strong>Duration of study:</strong> 3 years</li>
-                                <li><strong>Campus:</strong> Madang</li>
-                            </ul>
-                        </div>
-                        <div class='course-block course-account'>
-                            <h2>Account Details for Fee Payments</h2>
-                            <ul>
-                                <li><strong>Bank:</strong> BSP Madang</li>
-                                <li><strong>Branch No.:</strong> 960</li>
-                                <li><strong>Account No.:</strong> 1000 433 578</li>
-                                <li><strong>Account Name:</strong> TDEC / DWU</li>
-                            </ul>
-                        </div>
-                        <div class='course-block course-contact'>
-                            <h2>Contact</h2>
-                            <p>For application forms or information, contact:</p>
-                            <p><strong>The Post Graduate and Research Centre</strong><br>
-                            Divine Word University<br>
-                            PO Box 483<br>
-                            Madang, 511, Papua New Guinea</p>
-                            <p><strong>Ph.</strong> (675) 424 1830 Ext: 830<br>
-                            <strong>Fax.</strong> (675) 422 1312<br>
-                            <strong>Email:</strong> <a href='mailto:pgrc@dwu.ac.pg'>pgrc@dwu.ac.pg</a></p>
-        
-                            <p class='updated'>Updated April 2024</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="course-block course-units full-width">
-                    <h2>Description of Units</h2>
-                    <p>Each unit has a 15-credit-point value except the Research Dissertation, which has 30 credit points. Students must gain 150 credit points to be eligible to graduate with the award.</p>
-                    <div class='unit-item'>
-                        <h3>Unit 1: RM613 Resources for Applied Research in Papua New Guinea</h3>
-                        <p>This unit introduces students to the foundation documents for multidisciplinary research in Papua New Guinea. By the end of the unit, students should know where to find background information for any research topic.</p>
-                    </div>
-                    <div class='unit-item'>
-                        <h3>Unit 2: RM610 Theory and Methods for Applied Research</h3>
-                        <p>This unit explores key research theories and paradigms and their suitability in particular situations. Students investigate scientific, social and indigenous research, study qualitative, quantitative and mixed-methods research tools, and explore the contexts in which they are used.</p>
-                    </div>
-                    <div class='unit-item'>
-                        <h3>Unit 3: RM603 Crafting the Literature Review</h3>
-                        <p>This unit helps students master the skills needed to select and critique relevant research literature that informs their research topics and to make sense of the discussions presented in that literature.</p>
-                    </div>
-                    <div class='unit-item'>
-                        <h3>Unit 4: RM606 Ethics in Research</h3>
-                        <p>This unit introduces ethical concepts and theories that underpin applied ethical decision-making in research involving human participants. It also examines the historical and legal context that makes ethics relevant to research today.</p>
-                    </div>
-                    <div class='unit-item'>
-                        <h3>Unit 5: RM607 Developing the Research Proposal</h3>
-                        <p>This unit assists candidates to define, plan and develop a research proposal in their respective fields that meets the requirements of the University's Research Ethics Committee.</p>
-                    </div>
-                    <div class='unit-item'>
-                        <h3>Unit 6: RM615 Quantitative Research Methods</h3>
-                        <p>This unit builds on RM610 by focusing on quantitative research approaches, methods and techniques. It introduces the main quantitative approaches and the methods students can adopt when designing a quantitative study for their research project.</p>
-                    </div>
-                    <div class='unit-item'>
-                        <h3>Unit 7: RM614 Qualitative Research Methods</h3>
-                        <p>This unit builds on RM610 by focusing on qualitative approaches such as ethnography, action research, phenomenological research, narrative research and grounded theory. It also covers data-collection instruments, data analysis and ethical considerations.</p>
-                    </div>
-                    <div class='unit-item'>
-                        <h3>Unit 8: RM605 Interpreting and Analyzing Data</h3>
-                        <p>This unit focuses on organizing, coding and displaying fieldwork data for analysis and interpretation. Students become familiar with techniques for qualitative, quantitative and mixed-methods data presentation and analysis.</p>
-                    </div>
-                    <div class='unit-item'>
-                        <h3>Unit 9: RM608 The Research Dissertation (30 Credit Points)</h3>
-                        <p>Students work closely with their supervisor so that the research process, data analysis and interpretation are mentored and monitored. The unit concludes with the production and examination of a dissertation of no more than 20,000 words.</p>
-                    </div>
-                </div>
             </div>
         </div>
-
-        <!-- Footer Section Start -->
+<!-- Footer Section Start -->
         <div class='section footer-section'>
             <div class='footer-copyright-area'>
                 <div class='container'>
