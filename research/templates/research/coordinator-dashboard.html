@@ -84,6 +84,7 @@
                     <div class='filter-actions'>
                         <button type='submit' class='btn-submit'>Filter</button>
                         <a class='filter-clear' href="{% url 'research:coordinator-dashboard' %}">Clear</a>
+                        <a class='btn-export' href="{% url 'research:export-applications' %}?q={{ query|urlencode }}&program={{ selected_program|urlencode }}&status={{ selected_status|urlencode }}">Export CSV</a>
                     </div>
                 </form>
 
@@ -97,9 +98,10 @@
                                 <th>Applicant</th>
                                 <th>Program</th>
                                 <th>Study Mode</th>
-                                <th>Email</th>
+                                <th>Contact</th>
                                 <th>Submitted</th>
                                 <th>Status</th>
+                                <th>Documents</th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -113,9 +115,19 @@
                                 </td>
                                 <td>{{ application.get_program_display }}</td>
                                 <td>{{ application.study_mode|default:'—' }}</td>
-                                <td><a href='mailto:{{ application.email }}'>{{ application.email }}</a></td>
+                                <td>
+                                    <a class='btn-contact' href='mailto:{{ application.email }}?subject=RE:%20Your%20application%20{{ application.reference }}%20-%20DWU%20Postgraduate%20%26%20Research%20Centre'>Email</a>
+                                    {% if application.mobile_phone %}<a class='btn-contact btn-phone' href='tel:{{ application.mobile_phone }}'>Call</a>{% endif %}
+                                </td>
                                 <td>{{ application.submitted_at|date:'d M Y, H:i' }}</td>
                                 <td><span class='status-badge status-{{ application.status }}'>{{ application.get_status_display }}</span></td>
+                                <td>
+                                    {% if application.documents.exists %}
+                                    <a class='btn-download' href="{% url 'research:download-application-documents' application.pk %}">Download all</a>
+                                    {% else %}
+                                    <span class='no-documents'>—</span>
+                                    {% endif %}
+                                </td>
                                 <td><a class='btn-view' href="{% url 'research:application-detail' application.pk %}">View</a></td>
                             </tr>
                             {% endfor %}

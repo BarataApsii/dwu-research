@@ -21868,6 +21868,64 @@ body.cs-page .cs-link:hover i {
         position: static;
     }
 }
+.btn-export {
+    display: inline-block;
+    padding: 10px 18px;
+    background: #021E40;
+    color: #ffffff;
+    border-radius: 4px;
+    font-weight: 600;
+    text-decoration: none;
+}
+.btn-export:hover {
+    background: #009959;
+    color: #ffffff;
+}
+.btn-contact,
+.btn-download {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 13px;
+    text-decoration: none;
+    margin-right: 6px;
+    margin-bottom: 4px;
+}
+.btn-contact {
+    background: #e8f2fb;
+    color: #084d7a;
+}
+.btn-contact:hover {
+    background: #c2ddf2;
+}
+.btn-download {
+    background: #009959;
+    color: #ffffff;
+}
+.btn-download:hover {
+    background: #007744;
+    color: #ffffff;
+}
+.no-documents {
+    color: #888888;
+}
+.applicant-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.applicant-actions .btn-submit {
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+}
+.applicant-actions .btn-download {
+    width: 100%;
+    text-align: center;
+}
+
 @media only screen and (max-width: 767px) {
     .dashboard-stats {
         grid-template-columns: repeat(2, 1fr);

@@ -14,5 +14,8 @@ urlpatterns = [
     path('doctor-of-philosophy/apply/', views.phd_application_form, name='phd-apply'),
     path('doctor-of-education/', views.doctor_of_education, name='doctor-of-education'),
     path('dashboard/', views.coordinator_dashboard, name='coordinator-dashboard'),
+    path('dashboard/export/', views.export_applications_csv, name='export-applications'),
     path('dashboard/applications/<int:pk>/', views.application_detail, name='application-detail'),
+    path('dashboard/applications/<int:pk>/download/', views.download_application_documents, name='download-application-documents'),
+    path('documents/<int:pk>/download/', views.document_download, name='download-document'),
 ]

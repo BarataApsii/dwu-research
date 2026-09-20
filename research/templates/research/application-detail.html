@@ -126,7 +126,7 @@
                                 {% for document in documents %}
                                 <li>
                                     <span class='document-category'>{{ document.get_category_display }}</span>
-                                    <a href='{{ document.file.url }}' target='_blank' rel='noopener'>{{ document.file.name|slice:'14:' }}</a>
+                                    <a href="{% url 'research:download-document' document.pk %}">{{ document.file.name|slice:'14:' }}</a>
                                 </li>
                                 {% endfor %}
                             </ul>
@@ -141,22 +141,11 @@
                         <div class='detail-card status-card'>
                             <h2>Application Status</h2>
                             <p><span class='status-badge status-{{ application.status }}'>{{ application.get_status_display }}</span></p>
-                            <form method='post' action=''>
-                                {% csrf_token %}
-                                <div class='form-group'>
-                                    <label for='status'>Update status</label>
-                                    <select id='status' name='status'>
-                                        {% for value, label in status_choices %}
-                                        <option value='{{ value }}' {% if value == application.status %}selected{% endif %}>{{ label }}</option>
-                                        {% endfor %}
-                                    </select>
-                                </div>
-                                <div class='form-group'>
-                                    <label for='coordinator_notes'>Coordinator notes</label>
-                                    <textarea id='coordinator_notes' name='coordinator_notes' rows='5' placeholder='Internal notes about this application'>{{ application.coordinator_notes }}</textarea>
-                                </div>
-                                <button type='submit' class='btn-submit'>Save Changes</button>
-                            </form>
+                            <div class='applicant-actions'>
+                                <a class='btn-submit btn-email' href='mailto:{{ application.email }}?subject=RE:%20Your%20application%20{{ application.reference }}%20-%20DWU%20Postgraduate%20%26%20Research%20Centre'>Email applicant</a>
+                                {% if application.mobile_phone %}<a class='btn-submit btn-phone' href='tel:{{ application.mobile_phone }}'>Call applicant</a>{% endif %}
+                                {% if documents %}<a class='btn-download' href="{% url 'research:download-application-documents' application.pk %}">Download all documents</a>{% endif %}
+                            </div>
                         </div>
 
                         <div class='detail-card'>

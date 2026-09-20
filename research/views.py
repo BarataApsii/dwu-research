@@ -1,9 +1,18 @@
+import csv
+import io
+import mimetypes
+import os
+import zipfile
+
 from django.contrib import messages
 from django.contrib.admin.views.decorators import staff_member_required
 from django.core.mail import send_mail
 from django.core.paginator import Paginator
 from django.db.models import Count, Q
+from django.http import FileResponse, Http404, HttpResponse
 from django.shortcuts import get_object_or_404, redirect, render
+from django.utils import timezone
+from django.utils.text import slugify
 
 from .models import Application, ApplicationDocument
 
@@ -160,18 +169,85 @@ def coordinator_dashboard(request):
 @staff_member_required
 def application_detail(request, pk):
     application = get_object_or_404(Application, pk=pk)
-
-    if request.method == 'POST':
-        new_status = request.POST.get('status')
-        if new_status in dict(Application.STATUS_CHOICES):
-            application.status = new_status
-        application.coordinator_notes = request.POST.get('coordinator_notes', '')
-        application.save()
-        messages.success(request, 'Application updated.')
-        return redirect('research:application-detail', pk=application.pk)
-
     return render(request, 'research/application-detail.html', {
         'application': application,
         'documents': application.documents.all(),
-        'status_choices': Application.STATUS_CHOICES,
     })
+
+
+@staff_member_required
+def document_download(request, pk):
+    document = get_object_or_404(ApplicationDocument, pk=pk)
+    file_path = document.file.path
+    if not os.path.exists(file_path):
+        raise Http404('Document not found.')
+    content_type, _ = mimetypes.guess_type(file_path)
+    if not content_type:
+        content_type = 'application/octet-stream'
+    return FileResponse(
+        open(file_path, 'rb'),
+        content_type=content_type,
+        as_attachment=True,
+        filename=os.path.basename(file_path),
+    )
+
+
+@staff_member_required
+def download_application_documents(request, pk):
+    application = get_object_or_404(Application, pk=pk)
+    buffer = io.BytesIO()
+    with zipfile.ZipFile(buffer, 'w', zipfile.ZIP_DEFLATED) as zip_file:
+        for document in application.documents.all():
+            file_path = document.file.path
+            if os.path.exists(file_path):
+                arcname = f'{document.get_category_display()}/{os.path.basename(file_path)}'
+                zip_file.write(file_path, arcname)
+    buffer.seek(0)
+    filename = f'{slugify(application.applicant_name)}-{application.reference}-documents.zip'
+    response = HttpResponse(buffer, content_type='application/zip')
+    response['Content-Disposition'] = f'attachment; filename="{filename}"'
+    return response
+
+
+@staff_member_required
+def export_applications_csv(request):
+    applications = Application.objects.all()
+
+    query = request.GET.get('q', '').strip()
+    program = request.GET.get('program', '')
+    status = request.GET.get('status', '')
+
+    if query:
+        applications = applications.filter(
+            Q(first_name__icontains=query) | Q(middle_name__icontains=query)
+            | Q(surname__icontains=query) | Q(full_name__icontains=query)
+            | Q(email__icontains=query) | Q(research_topic__icontains=query)
+        )
+    if program in dict(Application.PROGRAM_CHOICES):
+        applications = applications.filter(program=program)
+    if status in dict(Application.STATUS_CHOICES):
+        applications = applications.filter(status=status)
+
+    timestamp = timezone.now().strftime('%Y%m%d-%H%M%S')
+    filename = f'dwu-applications-{timestamp}.csv'
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = f'attachment; filename="{filename}"'
+
+    writer = csv.writer(response)
+    writer.writerow([
+        'Reference', 'Applicant', 'Program', 'Study Mode', 'Email',
+        'Mobile Phone', 'Submitted', 'Status', 'Research Topic',
+    ])
+    for application in applications:
+        writer.writerow([
+            application.reference,
+            application.applicant_name,
+            application.get_program_display(),
+            application.study_mode or '',
+            application.email,
+            application.mobile_phone or '',
+            application.submitted_at.strftime('%d %b %Y, %H:%M'),
+            application.get_status_display(),
+            application.research_topic or '',
+        ])
+    return response
