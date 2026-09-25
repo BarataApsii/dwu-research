@@ -11,6 +11,36 @@
     <link rel='shortcut icon' type='image/x-icon' href="{% static 'research/images/logo.png' %}">
     <link href='https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap' rel='stylesheet'>
     <link rel='stylesheet' href="{% static 'research/css/new-research.css' %}">
+    <style>
+        .research-publications {
+            background-color: #f8f9fa;
+        }
+        .research-search-wrap {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .research-search-form {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .research-search-input {
+            flex: 1 1 250px;
+            height: 55px;
+            padding: 0 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 15px;
+            outline: none;
+        }
+        .research-search-input:focus {
+            border-color: #0071dc;
+        }
+        .research-search-results {
+            margin-top: 30px;
+        }
+    </style>
 </head>
 <body>
     <div class='main-wrapper'>
@@ -600,6 +630,31 @@
                         </div>
                         <img src="{% static 'research/images/students.png' %}" alt='Research students' class='program-card-image'>
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Research Publications Search -->
+        <div class='section section-padding research-publications'>
+            <div class='container'>
+                <div class='section-title text-center'>
+                    <h2 class='title'>Research Publications</h2>
+                    <p class='sub-title'>Search for previously published research by researcher, title or year.</p>
+                </div>
+                <div class='research-search-wrap'>
+                    <form class='research-search-form' method='get' action="{% url 'research:home' %}">
+                        <input type='text' name='q' class='research-search-input' placeholder='Search by researcher, title or year...' value="{{ request.GET.q|default:'' }}">
+                        <button type='submit' class='btn'>Search</button>
+                    </form>
+                </div>
+                <div class='research-search-results'>
+                    {% comment %}
+                        Backend developer: populate this block with the CMS-driven
+                        search results (e.g. loop over a `publications` variable).
+                    {% endcomment %}
+                    {% if request.GET.q and not publications %}
+                        <p class='text-center mt-4'>No published research found. (Results will be provided by the CMS.)</p>
+                    {% endif %}
                 </div>
             </div>
         </div>
