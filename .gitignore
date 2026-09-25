@@ -1,27 +1,6 @@
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-
-# Django
-*.sqlite3
 db.sqlite3
-staticfiles/
 media/
-
-# Environments
-.env
-.venv
 venv/
-env/
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# OS
-.DS_Store
-Thumbs.db
+__pycache__/
+*.pyc
+.env
