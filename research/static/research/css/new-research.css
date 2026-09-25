@@ -21133,6 +21133,12 @@ body.cs-page .cs-link:hover i {
     margin-bottom: 15px;
     padding-bottom: 0;
 }
+.course-download {
+    text-align: center;
+}
+.course-download h2 {
+    text-align: center;
+}
 .course-block h3 {
     font-family: 'Montserrat', sans-serif;
     font-size: 18px;
@@ -21906,6 +21912,14 @@ body.cs-page .cs-link:hover i {
 .btn-download:hover {
     background: #007744;
     color: #ffffff;
+}
+.btn-download.btn-apply {
+    display: block;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    width: 100%;
 }
 .no-documents {
     color: #888888;
